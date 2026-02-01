@@ -1,0 +1,548 @@
+/* ============================================
+   COMPONENTS - ÉLECTRICIEN PRO
+   Composants réutilisables
+   ============================================ */
+
+/* ------------------------------------------
+   BOUTONS
+   ------------------------------------------ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-lg);
+    border: var(--border-width-2) solid transparent;
+    cursor: pointer;
+    transition: var(--transition-all);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent);
+    transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--color-electric-blue);
+    outline-offset: 2px;
+}
+
+/* Variante primaire */
+.btn--primary {
+    background: linear-gradient(135deg, var(--color-electric-blue), var(--color-electric-blue-dark));
+    color: var(--color-deep-black);
+    box-shadow: 0 4px 15px var(--color-electric-blue-glow);
+}
+
+.btn--primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px -4px var(--color-electric-blue-glow);
+}
+
+/* Variante secondaire */
+.btn--secondary {
+    background: transparent;
+    color: var(--color-electric-blue);
+    border-color: var(--color-electric-blue);
+}
+
+.btn--secondary:hover {
+    background: var(--color-electric-blue);
+    color: var(--color-deep-black);
+    box-shadow: var(--glow-blue);
+}
+
+/* Variante accent (jaune néon) */
+.btn--accent {
+    background: linear-gradient(135deg, var(--color-neon-yellow), var(--color-neon-yellow-dark));
+    color: var(--color-deep-black);
+    box-shadow: 0 4px 15px var(--color-neon-yellow-glow);
+}
+
+.btn--accent:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--glow-yellow);
+}
+
+/* Variante outline */
+.btn--outline {
+    background: transparent;
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.btn--outline:hover {
+    border-color: var(--color-electric-blue);
+    color: var(--color-electric-blue);
+}
+
+/* Tailles */
+.btn--sm {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-xs);
+}
+
+.btn--lg {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--text-base);
+}
+
+.btn--full {
+    width: 100%;
+}
+
+/* ------------------------------------------
+   CARTES
+   ------------------------------------------ */
+.card {
+    background: var(--bg-secondary);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    transition: var(--transition-all);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-electric-blue), var(--color-neon-green));
+    transform: scaleX(0);
+    transition: transform var(--transition-slow);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-electric-blue);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+.card__icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-electric-blue-glow), transparent);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+    color: var(--color-electric-blue);
+    transition: var(--transition-all);
+}
+
+.card:hover .card__icon {
+    background: linear-gradient(135deg, var(--color-electric-blue), var(--color-electric-blue-dark));
+    color: var(--color-deep-black);
+    box-shadow: var(--glow-blue);
+}
+
+.card__title {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-2);
+}
+
+.card__text {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    margin-bottom: 0;
+}
+
+/* ------------------------------------------
+   BADGES
+   ------------------------------------------ */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-full);
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+.badge--primary {
+    background: var(--color-electric-blue-glow);
+    color: var(--color-electric-blue);
+}
+
+.badge--success {
+    background: var(--color-success-bg);
+    color: var(--color-success);
+}
+
+.badge--warning {
+    background: var(--color-warning-bg);
+    color: var(--color-neon-yellow);
+}
+
+.badge--neon {
+    background: linear-gradient(135deg, var(--color-electric-blue-glow), var(--color-neon-green-glow));
+    color: var(--color-electric-blue);
+    border: 1px solid var(--color-electric-blue);
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* ------------------------------------------
+   INPUTS
+   ------------------------------------------ */
+.input-group {
+    margin-bottom: var(--space-4);
+}
+
+.input-label {
+    display: block;
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-2);
+}
+
+.input {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--radius-lg);
+    color: var(--text-primary);
+    font-size: var(--text-base);
+    transition: var(--transition-all);
+}
+
+.input:hover {
+    border-color: var(--border-color-hover);
+}
+
+.input:focus {
+    border-color: var(--color-electric-blue);
+    box-shadow: 0 0 0 3px var(--color-electric-blue-glow);
+}
+
+.input::placeholder {
+    color: var(--text-muted);
+}
+
+.input--error {
+    border-color: var(--color-error);
+}
+
+.input--error:focus {
+    box-shadow: 0 0 0 3px var(--color-error-bg);
+}
+
+.input--success {
+    border-color: var(--color-success);
+}
+
+.input__error {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-sm);
+    color: var(--color-error);
+    margin-top: var(--space-2);
+}
+
+/* Select */
+.select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%238A8A9A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--space-3) center;
+    background-size: 20px;
+    padding-right: var(--space-10);
+}
+
+/* Textarea */
+.textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Checkbox / Radio */
+.checkbox,
+.radio {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    cursor: pointer;
+}
+
+.checkbox__input,
+.radio__input {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-tertiary);
+    transition: var(--transition-all);
+    flex-shrink: 0;
+}
+
+.checkbox__input {
+    border-radius: var(--radius-sm);
+}
+
+.radio__input {
+    border-radius: var(--radius-full);
+}
+
+.checkbox__input:checked,
+.radio__input:checked {
+    background: var(--color-electric-blue);
+    border-color: var(--color-electric-blue);
+}
+
+.checkbox__text,
+.radio__text {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
+
+/* ------------------------------------------
+   SECTION HEADER
+   ------------------------------------------ */
+.section-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto var(--space-12);
+}
+
+.section-header__badge {
+    margin-bottom: var(--space-4);
+}
+
+.section-header__title {
+    margin-bottom: var(--space-4);
+}
+
+.section-header__title span {
+    color: var(--color-electric-blue);
+}
+
+.section-header__text {
+    color: var(--text-muted);
+    font-size: var(--text-lg);
+    margin-bottom: 0;
+}
+
+/* ------------------------------------------
+   DIVIDER
+   ------------------------------------------ */
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--border-color),
+            transparent);
+    margin: var(--space-8) 0;
+}
+
+.divider--glow {
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--color-electric-blue),
+            var(--color-neon-green),
+            var(--color-electric-blue),
+            transparent);
+    box-shadow: 0 0 10px var(--color-electric-blue-glow);
+}
+
+/* ------------------------------------------
+   GRID UTILITIES
+   ------------------------------------------ */
+.grid {
+    display: grid;
+    gap: var(--space-6);
+}
+
+.grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+    .grid--4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .grid--2,
+    .grid--3,
+    .grid--4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ------------------------------------------
+   FLEX UTILITIES
+   ------------------------------------------ */
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.gap-2 {
+    gap: var(--space-2);
+}
+
+.gap-4 {
+    gap: var(--space-4);
+}
+
+.gap-6 {
+    gap: var(--space-6);
+}
+
+.gap-8 {
+    gap: var(--space-8);
+}
+
+/* ------------------------------------------
+   SPACING UTILITIES
+   ------------------------------------------ */
+.mt-4 {
+    margin-top: var(--space-4);
+}
+
+.mt-8 {
+    margin-top: var(--space-8);
+}
+
+.mt-12 {
+    margin-top: var(--space-12);
+}
+
+.mt-16 {
+    margin-top: var(--space-16);
+}
+
+.mb-4 {
+    margin-bottom: var(--space-4);
+}
+
+.mb-8 {
+    margin-bottom: var(--space-8);
+}
+
+.mb-12 {
+    margin-bottom: var(--space-12);
+}
+
+.mb-16 {
+    margin-bottom: var(--space-16);
+}
+
+.py-16 {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+}
+
+.py-24 {
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-24);
+}
+
+/* ------------------------------------------
+   TEXT UTILITIES
+   ------------------------------------------ */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-primary {
+    color: var(--text-primary);
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.text-blue {
+    color: var(--color-electric-blue);
+}
+
+.text-green {
+    color: var(--color-neon-green);
+}
+
+.text-yellow {
+    color: var(--color-neon-yellow);
+}
+
+.font-display {
+    font-family: var(--font-display);
+}
+
+.font-bold {
+    font-weight: var(--font-bold);
+}

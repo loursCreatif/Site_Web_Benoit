@@ -1,0 +1,219 @@
+/* ============================================
+   VARIABLES CSS - ÉLECTRICIEN PRO
+   Palette énergie : Bleu électrique, Jaune/Vert néon, Noir profond
+   ============================================ */
+
+:root {
+    /* ------------------------------------------
+     COULEURS PRINCIPALES (Palette Brand)
+     ------------------------------------------ */
+    --color-electric-blue: #0055AA;
+    --color-electric-blue-dark: #003377;
+    --color-electric-blue-light: #4488DD;
+
+    --color-neon-yellow: #F59E0B;
+    --color-neon-yellow-dark: #B45309;
+
+    --color-neon-green: #10B981;
+    --color-neon-green-dark: #047857;
+
+    --color-deep-black: #0A0A0F;
+    --color-dark-surface: #1F2937;
+    --color-dark-elevated: #374151;
+
+    /* ------------------------------------------
+     COULEURS DE SUPPORT (Palette Neutre)
+     ------------------------------------------ */
+    --color-white: #FFFFFF;
+    --color-off-white: #F9FAFB;
+    --color-gray-100: #F3F4F6;
+    --color-gray-200: #E5E7EB;
+    --color-gray-300: #D1D5DB;
+    --color-gray-400: #9CA3AF;
+    --color-gray-500: #6B7280;
+    --color-gray-600: #4B5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1F2937;
+    --color-gray-900: #111827;
+
+    /* ------------------------------------------
+     VARIABLES SÉMANTIQUES (DEFAULT DARK)
+     ------------------------------------------ */
+    /* Backgrounds */
+    --bg-primary: var(--color-deep-black);
+    --bg-secondary: #111827;
+    /* Gray 900 */
+    --bg-tertiary: #1F2937;
+    /* Gray 800 */
+    --bg-card: #1F2937;
+    --bg-elevated: #374151;
+    /* Gray 700 */
+
+    /* Text */
+    --text-primary: var(--color-white);
+    --text-secondary: var(--color-gray-300);
+    --text-muted: var(--color-gray-400);
+    --text-inverse: var(--color-deep-black);
+
+    /* Borders */
+    --border-color: #374151;
+    /* Gray 700 */
+    --border-color-hover: #4B5563;
+    /* Gray 600 */
+    --border-color-light: #1F2937;
+
+    /* Shadows */
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --shadow-color-strong: rgba(0, 0, 0, 0.7);
+
+    /* Accents Brand */
+    --color-primary: #3388FF;
+    /* Electric Blue Lighter */
+    --color-primary-dark: var(--color-electric-blue-dark);
+    --color-primary-light: var(--color-electric-blue-light);
+    --color-primary-glow: rgba(51, 136, 255, 0.3);
+
+    --color-secondary: var(--color-neon-yellow);
+    --color-secondary-glowing: rgba(245, 158, 11, 0.3);
+
+    /* ------------------------------------------
+     COULEURS FONCTIONNELLES
+     ------------------------------------------ */
+    --color-success: var(--color-neon-green);
+    --color-success-bg: rgba(16, 185, 129, 0.1);
+    --color-warning: var(--color-neon-yellow);
+    --color-warning-bg: rgba(245, 158, 11, 0.1);
+    --color-error: #EF4444;
+    --color-error-bg: rgba(239, 68, 68, 0.1);
+
+    /* ------------------------------------------
+     TYPOGRAPHIE
+     ------------------------------------------ */
+    --font-display: 'Orbitron', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Échelle typographique */
+    --text-xs: 0.75rem;
+    /* 12px */
+    --text-sm: 0.875rem;
+    /* 14px */
+    --text-base: 1rem;
+    /* 16px */
+    --text-lg: 1.125rem;
+    /* 18px */
+    --text-xl: 1.25rem;
+    /* 20px */
+    --text-2xl: 1.5rem;
+    /* 24px */
+    --text-3xl: 1.875rem;
+    /* 30px */
+    --text-4xl: 2.25rem;
+    /* 36px */
+    --text-5xl: 3rem;
+    /* 48px */
+    --text-6xl: 3.75rem;
+    /* 60px */
+
+    /* Poids */
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+
+    /* ------------------------------------------
+     ESPACEMENTS & BORDURES
+     ------------------------------------------ */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
+    --radius-full: 9999px;
+
+    /* ------------------------------------------
+     OMBRES
+     ------------------------------------------ */
+    --shadow-sm: 0 1px 2px var(--shadow-color);
+    --shadow-md: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
+    --shadow-lg: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -2px var(--shadow-color);
+    --shadow-xl: 0 20px 25px -5px var(--shadow-color), 0 10px 10px -5px var(--shadow-color);
+
+    --shadow-card: 0 4px 6px -1px var(--shadow-color);
+    --shadow-card-hover: 0 10px 15px -3px var(--shadow-color-strong);
+
+    /* ------------------------------------------
+     MISC
+     ------------------------------------------ */
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 350ms ease;
+
+    --container-max: 1280px;
+    --container-padding: 1rem;
+
+    /* ------------------------------------------
+     Z-INDEX
+     ------------------------------------------ */
+    --z-base: 1;
+    --z-fixed: 1000;
+    --z-modal: 2000;
+    --z-loader: 3000;
+}
+
+/* ============================================
+   LIGHT MODE OVERRIDES
+   ============================================ */
+[data-theme="light"] {
+    /* Backgrounds */
+    --bg-primary: var(--color-white);
+    --bg-secondary: var(--color-off-white);
+    --bg-tertiary: var(--color-gray-100);
+    --bg-card: var(--color-white);
+    --bg-elevated: var(--color-white);
+
+    /* Text */
+    --text-primary: var(--color-gray-900);
+    --text-secondary: var(--color-gray-600);
+    --text-muted: var(--color-gray-500);
+    --text-inverse: var(--color-white);
+
+    /* Borders */
+    --border-color: var(--color-gray-200);
+    --border-color-hover: var(--color-gray-300);
+    --border-color-light: var(--color-gray-100);
+
+    /* Shadows */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow-color-strong: rgba(0, 0, 0, 0.2);
+
+    /* Accents */
+    --color-primary: var(--color-electric-blue);
+    --color-primary-glow: rgba(0, 85, 170, 0.2);
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --transition-fast: 0.01ms;
+        --transition-base: 0.01ms;
+        --transition-slow: 0.01ms;
+        --transition-slower: 0.01ms;
+    }
+}

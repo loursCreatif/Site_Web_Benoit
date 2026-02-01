@@ -1,0 +1,432 @@
+/* ============================================
+   SERVICES SECTION - ÉLECTRICIEN PRO
+   ============================================ */
+
+.services {
+    padding: var(--space-16) 0;
+    position: relative;
+}
+
+.services__header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto var(--space-10);
+}
+
+.services__badge {
+    margin-bottom: var(--space-4);
+}
+
+.services__title {
+    margin-bottom: var(--space-4);
+}
+
+.services__title span {
+    color: var(--color-electric-blue);
+}
+
+.services__text {
+    color: var(--text-muted);
+    font-size: var(--text-lg);
+}
+
+/* Catégories de services */
+.services__category {
+    margin-bottom: var(--space-10);
+}
+
+.services__category-icon svg {
+    width: 64px;
+    height: 64px;
+}
+
+.services__category:last-child {
+    margin-bottom: 0;
+}
+
+.services__category-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+    position: relative;
+}
+
+.services__category-icon {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-electric-blue-glow), transparent);
+    border-radius: var(--radius-lg);
+    color: var(--color-electric-blue);
+    transition: var(--transition-all);
+}
+
+.services__category-icon--electric {
+    background: linear-gradient(135deg, var(--color-electric-blue-glow), transparent);
+    color: var(--color-electric-blue);
+}
+
+.services__category-icon--borne {
+    background: linear-gradient(135deg, var(--color-neon-green-glow), transparent);
+    color: var(--color-neon-green);
+    box-shadow: 0 0 20px var(--color-neon-green-glow);
+}
+
+.services__category-info {
+    flex: 1;
+}
+
+.services__category-title {
+    font-size: var(--text-2xl);
+    margin-bottom: 0;
+}
+
+.services__category-title--electric {
+    color: var(--color-electric-blue);
+}
+
+.services__category-title--borne {
+    color: var(--color-neon-green);
+}
+
+.services__category-subtitle {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-top: var(--space-1);
+}
+
+.services__category-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-1) var(--space-3);
+    background: linear-gradient(135deg, var(--color-neon-green), var(--color-neon-green-dark));
+    color: var(--color-white);
+    font-size: var(--text-xs);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-full);
+    box-shadow: 0 0 15px var(--color-neon-green-glow);
+}
+
+/* Différenciation visuelle des catégories */
+.services__category--borne {
+    position: relative;
+}
+
+.services__category--borne::before {
+    content: '';
+    position: absolute;
+    top: -var(--space-4);
+    left: -var(--space-4);
+    right: -var(--space-4);
+    bottom: -var(--space-4);
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), transparent);
+    border-radius: var(--radius-2xl);
+    pointer-events: none;
+}
+
+/* Grid de services */
+.services__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+}
+
+/* Carte de service */
+.service-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    transition: var(--transition-all);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Image en haut de la carte */
+.service-card__image {
+    width: calc(100% + var(--space-6) * 2);
+    margin: calc(-1 * var(--space-6)) calc(-1 * var(--space-6)) var(--space-4) calc(-1 * var(--space-6));
+    height: 140px;
+    overflow: hidden;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.service-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.service-card:hover .service-card__image img {
+    transform: scale(1.1);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-electric-blue), var(--color-neon-green));
+    transform: scaleX(0);
+    transition: transform var(--transition-slow);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-electric-blue);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px var(--color-electric-blue-glow);
+}
+
+.service-card--borne:hover {
+    border-color: var(--color-neon-green);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px var(--color-neon-green-glow);
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Icône avec animation */
+.service-card__icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-electric-blue-glow), transparent);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+    color: var(--color-electric-blue);
+    transition: var(--transition-all);
+    position: relative;
+}
+
+.service-card--borne .service-card__icon {
+    background: linear-gradient(135deg, var(--color-neon-green-glow), transparent);
+    color: var(--color-neon-green);
+}
+
+.service-card__icon::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, var(--color-electric-blue), var(--color-neon-green));
+    opacity: 0;
+    z-index: -1;
+    transition: opacity var(--transition-base);
+}
+
+.service-card:hover .service-card__icon {
+    background: transparent;
+    color: var(--color-deep-black);
+    transform: scale(1.1);
+}
+
+.service-card:hover .service-card__icon::after {
+    opacity: 1;
+}
+
+.service-card:hover .service-card__icon svg {
+    animation: icon-bounce 0.5s ease;
+}
+
+@keyframes icon-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.service-card__title {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-2);
+}
+
+.service-card__text {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-4);
+}
+
+.service-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-electric-blue);
+    transition: var(--transition-all);
+}
+
+.service-card__link svg {
+    transition: transform var(--transition-fast);
+}
+
+.service-card:hover .service-card__link {
+    color: var(--color-neon-green);
+}
+
+.service-card:hover .service-card__link svg {
+    transform: translateX(4px);
+}
+
+/* Services électriques généraux - icônes spécifiques */
+.service-card--electric .service-card__icon {
+    color: var(--color-neon-yellow);
+    background: linear-gradient(135deg, rgba(255, 230, 0, 0.2), transparent);
+}
+
+.service-card--electric:hover .service-card__icon::after {
+    background: linear-gradient(135deg, var(--color-neon-yellow), var(--color-electric-blue));
+}
+
+/* Services bornes - icônes spécifiques */
+.service-card--borne .service-card__icon {
+    color: var(--color-neon-green);
+    background: linear-gradient(135deg, var(--color-neon-green-glow), transparent);
+}
+
+.service-card--borne:hover .service-card__icon::after {
+    background: linear-gradient(135deg, var(--color-neon-green), var(--color-electric-blue));
+}
+
+/* Section spécialisation */
+.services__specialty {
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-6);
+    margin-top: var(--space-10);
+    position: relative;
+    overflow: hidden;
+}
+
+.services__specialty::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-electric-blue), var(--color-neon-green), var(--color-neon-yellow));
+}
+
+.services__specialty-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: center;
+}
+
+.services__specialty-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+    background: var(--color-neon-green-glow);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-4);
+}
+
+.services__specialty-badge svg {
+    color: var(--color-neon-green);
+}
+
+.services__specialty-badge span {
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-neon-green);
+    text-transform: uppercase;
+}
+
+.services__specialty-title {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-4);
+}
+
+.services__specialty-title span {
+    color: var(--color-neon-green);
+}
+
+.services__specialty-text {
+    color: var(--text-muted);
+    margin-bottom: var(--space-6);
+}
+
+.services__specialty-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.services__specialty-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
+
+.services__specialty-item svg {
+    color: var(--color-neon-green);
+    flex-shrink: 0;
+}
+
+.services__specialty-image {
+    position: relative;
+}
+
+.services__specialty-image-wrapper {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+}
+
+.services__specialty-image-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 50%, var(--color-neon-green-glow));
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .services__specialty-content {
+        grid-template-columns: 1fr;
+    }
+
+    .services__specialty-image {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .services__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services__category-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}

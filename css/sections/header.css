@@ -1,0 +1,226 @@
+/* ============================================
+   HEADER / NAVIGATION - ÉLECTRICIEN PRO
+   ============================================ */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: var(--z-fixed);
+    transition: var(--transition-all);
+    padding: var(--space-2) 0;
+}
+
+.header--scrolled {
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--space-1) 0;
+}
+
+/* Mode clair */
+[data-theme="light"] .header--scrolled {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.header__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    text-decoration: none;
+}
+
+.header__logo img {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+    background-color: rgba(200, 200, 200, 0.3);
+    /* Fond gris clair subtil */
+    border-radius: var(--radius-sm);
+    padding: 0 6px;
+    /* Padding horizontal uniquement */
+}
+
+.header__logo-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-electric-blue), var(--color-electric-blue-dark));
+    border-radius: var(--radius-lg);
+    color: var(--color-deep-black);
+    transition: var(--transition-all);
+}
+
+.header__logo:hover .header__logo-icon {
+    box-shadow: var(--glow-blue);
+    transform: scale(1.05);
+}
+
+.header__logo-text {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+}
+
+.header__logo-text span {
+    color: var(--color-electric-blue);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+}
+
+.nav__link {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: relative;
+    padding: var(--space-2) 0;
+    transition: var(--transition-colors);
+}
+
+.nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-electric-blue), var(--color-neon-green));
+    transition: width var(--transition-base);
+}
+
+.nav__link:hover {
+    color: var(--text-primary);
+}
+
+.nav__link:hover::after {
+    width: 100%;
+}
+
+.nav__link--active {
+    color: var(--color-electric-blue);
+}
+
+.nav__link--active::after {
+    width: 100%;
+}
+
+/* CTA dans nav */
+.nav__cta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.nav__phone {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    color: var(--color-neon-yellow);
+    transition: var(--transition-all);
+}
+
+.nav__phone:hover {
+    color: var(--color-neon-yellow);
+    text-shadow: 0 0 10px var(--color-neon-yellow-glow);
+}
+
+/* Menu mobile toggle */
+
+
+.nav__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    padding: var(--space-2);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.nav__toggle-line {
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    transition: var(--transition-all);
+}
+
+.nav__toggle--active .nav__toggle-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav__toggle--active .nav__toggle-line:nth-child(2) {
+    opacity: 0;
+}
+
+.nav__toggle--active .nav__toggle-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .nav__list {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 400px;
+        height: 100vh;
+        background: var(--bg-secondary);
+        flex-direction: column;
+        justify-content: center;
+        gap: var(--space-6);
+        padding: var(--space-8);
+        transition: right var(--transition-slow);
+        border-left: 1px solid var(--border-color);
+    }
+
+    .nav__list--open {
+        right: 0;
+    }
+
+    .nav__link {
+        font-size: var(--text-lg);
+    }
+
+    .nav__toggle {
+        display: flex;
+    }
+
+    .nav__cta {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .header__logo-text {
+        display: none;
+    }
+}

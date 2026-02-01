@@ -1,0 +1,438 @@
+/* ============================================
+   RESPONSIVE - ÉLECTRICIEN PRO
+   Media queries et ajustements
+   ============================================ */
+
+/* ------------------------------------------
+   TABLET (768px - 1023px)
+   ------------------------------------------ */
+@media (max-width: 1023px) {
+    :root {
+        --container-padding: var(--space-4);
+        --container-padding-lg: var(--space-6);
+    }
+
+    /* Typography adjustments */
+    h1 {
+        font-size: var(--text-4xl);
+    }
+
+    h2 {
+        font-size: var(--text-3xl);
+    }
+
+    h3 {
+        font-size: var(--text-2xl);
+    }
+
+    /* Section spacing */
+    .services,
+    .simulator,
+    .gallery,
+    .testimonials,
+    .coverage,
+    .faq,
+    .contact {
+        padding: var(--space-16) 0;
+    }
+
+    /* Grid adjustments */
+    .grid--3,
+    .grid--4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ------------------------------------------
+   MOBILE (< 768px)
+   ------------------------------------------ */
+@media (max-width: 767px) {
+
+    /* Typography */
+    h1 {
+        font-size: var(--text-3xl);
+    }
+
+    h2 {
+        font-size: var(--text-2xl);
+    }
+
+    h3 {
+        font-size: var(--text-xl);
+    }
+
+    /* Section spacing */
+    .services,
+    .simulator,
+    .gallery,
+    .testimonials,
+    .coverage,
+    .faq,
+    .contact {
+        padding: var(--space-12) 0;
+    }
+
+    /* Grids become single column */
+    .grid--2,
+    .grid--3,
+    .grid--4 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Buttons stack */
+    .hero__ctas {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero__ctas .btn {
+        width: 100%;
+    }
+
+    /* Cards full width */
+    .card {
+        padding: var(--space-5);
+    }
+
+    /* Section headers */
+    .section-header {
+        margin-bottom: var(--space-8);
+    }
+
+    .section-header__title {
+        font-size: var(--text-2xl);
+    }
+
+    /* Simulator */
+    .simulator__wrapper {
+        border-radius: var(--radius-xl);
+    }
+
+    .simulator__content {
+        padding: var(--space-5);
+    }
+
+    .simulator__options {
+        grid-template-columns: 1fr;
+    }
+
+    .simulator__nav {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+
+    .simulator__nav-btn {
+        width: 100%;
+    }
+
+    /* Gallery */
+    .gallery__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery__item--wide,
+    .gallery__item--tall {
+        grid-column: span 1;
+        grid-row: span 1;
+        aspect-ratio: 4/3;
+    }
+
+    /* Stats */
+    .stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-6) var(--space-4);
+    }
+
+    .stat-item:not(:last-child)::after {
+        display: none;
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+        padding: var(--space-5);
+    }
+
+    .testimonial-card::before {
+        font-size: 80px;
+    }
+
+    .testimonial-card__text {
+        font-size: var(--text-base);
+    }
+
+    /* Contact */
+    .contact__form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact__form-wrapper {
+        padding: var(--space-5);
+    }
+
+    /* Footer */
+    .footer__main {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .footer__brand {
+        max-width: 100%;
+    }
+
+    .footer__bottom {
+        flex-direction: column;
+        gap: var(--space-4);
+        text-align: center;
+    }
+}
+
+/* ------------------------------------------
+   SMALL MOBILE (< 480px)
+   ------------------------------------------ */
+@media (max-width: 479px) {
+    :root {
+        --container-padding: var(--space-3);
+    }
+
+    /* Typography */
+    h1 {
+        font-size: var(--text-2xl);
+    }
+
+    h2 {
+        font-size: var(--text-xl);
+    }
+
+    /* Badge adjustments */
+    .badge {
+        padding: var(--space-1) var(--space-2);
+        font-size: 10px;
+    }
+
+    /* Cards */
+    .card {
+        padding: var(--space-4);
+    }
+
+    .card__icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    /* Service cards */
+    .service-card {
+        padding: var(--space-5);
+    }
+
+    .service-card__icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    /* Stats single column */
+    .stats__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+
+    .stat-item:not(:last-child) {
+        padding-bottom: var(--space-6);
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    /* Gallery filters scroll */
+    .gallery__filters {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: var(--space-2);
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .gallery__filter {
+        white-space: nowrap;
+    }
+
+    /* FAQ */
+    .faq__question {
+        padding: var(--space-4);
+    }
+
+    .faq__question-text {
+        font-size: var(--text-sm);
+    }
+
+    /* Contact cards */
+    .contact__card {
+        padding: var(--space-4);
+    }
+
+    .contact__card-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact__card-value {
+        font-size: var(--text-base);
+    }
+}
+
+/* ------------------------------------------
+   LARGE SCREENS (> 1440px)
+   ------------------------------------------ */
+@media (min-width: 1440px) {
+    :root {
+        --container-max: 1400px;
+    }
+
+    /* Hero adjustments */
+    .hero__title {
+        font-size: var(--text-7xl);
+    }
+
+    /* Service grid */
+    .services__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ------------------------------------------
+   HIGH DPI / RETINA
+   ------------------------------------------ */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
+    /* Sharper text rendering */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* ------------------------------------------
+   REDUCED MOTION
+   ------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+    .hero__image-wrapper {
+        animation: none;
+    }
+
+    .particle {
+        animation: none;
+    }
+}
+
+/* ------------------------------------------
+   PRINT STYLES
+   ------------------------------------------ */
+@media print {
+
+    .header,
+    .hero__scroll,
+    .footer__top,
+    .nav__toggle,
+    .btn {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    .card,
+    .service-card,
+    .testimonial-card {
+        break-inside: avoid;
+        border: 1px solid #ccc;
+    }
+}
+
+/* ------------------------------------------
+   LANDSCAPE ORIENTATION
+   ------------------------------------------ */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 100px 0 60px;
+    }
+
+    .hero__scroll {
+        display: none;
+    }
+}
+
+/* ------------------------------------------
+   DARK MODE (system preference - already dark by default)
+   ------------------------------------------ */
+@media (prefers-color-scheme: light) {
+    /* Keep dark theme even in light mode preference */
+    /* This site is designed for dark theme only */
+}
+
+/* ------------------------------------------
+   HOVER CAPABILITIES
+   ------------------------------------------ */
+@media (hover: hover) {
+    .service-card:hover {
+        transform: translateY(-8px);
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+}
+
+@media (hover: none) {
+    .service-card:active {
+        transform: scale(0.98);
+    }
+
+    .btn:active {
+        transform: scale(0.98);
+    }
+
+    /* Remove hover-only effects on touch devices */
+    .card::before,
+    .service-card::before {
+        display: none;
+    }
+}
+
+/* ------------------------------------------
+   SAFE AREA INSETS (notch devices)
+   ------------------------------------------ */
+@supports (padding: max(0px)) {
+    .header {
+        padding-left: max(var(--space-4), env(safe-area-inset-left));
+        padding-right: max(var(--space-4), env(safe-area-inset-right));
+    }
+
+    .footer {
+        padding-bottom: max(var(--space-6), env(safe-area-inset-bottom));
+    }
+}

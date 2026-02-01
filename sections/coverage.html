@@ -1,0 +1,69 @@
+<!-- Coverage Section -->
+<section class="coverage" id="zone-intervention">
+    <div class="container">
+        <div class="coverage__container">
+            <div class="coverage__content reveal">
+                <span class="badge badge--primary coverage__badge">Zone d'intervention</span>
+                <h2 class="coverage__title">Nous intervenons dans toute la <span>région</span></h2>
+                <p class="coverage__text">Basés à La Hague (près de Cherbourg), nous couvrons un rayon de 40 km pour
+                    tous vos besoins
+                    électriques et installations de bornes de recharge.</p>
+
+                <div class="coverage__cities">
+                    <h4 class="coverage__cities-title">Principales villes desservies</h4>
+                    <div class="coverage__cities-grid" id="cities-grid"></div>
+                </div>
+
+                <div class="coverage__info" id="coverage-info"></div>
+            </div>
+
+            <div class="coverage__map reveal">
+                <div class="coverage__map-wrapper">
+                    <svg class="coverage__map-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Zone de couverture -->
+                        <circle cx="200" cy="150" r="120" fill="rgba(0, 212, 255, 0.1)" stroke="#00D4FF"
+                            stroke-width="2" stroke-dasharray="5,5" />
+                        <circle cx="200" cy="150" r="80" fill="rgba(0, 212, 255, 0.2)" stroke="#00D4FF"
+                            stroke-width="2" />
+
+                        <!-- Centre (La Hague) -->
+                        <g class="coverage__marker" data-city="La Hague">
+                            <circle class="coverage__marker-pulse" cx="200" cy="150" r="15" />
+                            <circle class="coverage__marker-circle" cx="200" cy="150" r="8" />
+                            <text class="coverage__marker-label" x="200" y="130">La Hague</text>
+                        </g>
+
+                        <!-- Villes environnantes -->
+                        <g class="coverage__marker" data-city="Cherbourg">
+                            <circle class="coverage__marker-circle" cx="200" cy="80" r="5" />
+                            <text class="coverage__marker-label" x="200" y="70">Cherbourg</text>
+                        </g>
+
+                        <g class="coverage__marker" data-city="Les Pieux">
+                            <circle class="coverage__marker-circle" cx="200" cy="220" r="5" />
+                            <text class="coverage__marker-label" x="200" y="240">Les Pieux</text>
+                        </g>
+                        <g class="coverage__marker" data-city="Flamanville">
+                            <circle class="coverage__marker-circle" cx="140" cy="150" r="5" />
+                            <text class="coverage__marker-label" x="140" y="140">Flamanville</text>
+                        </g>
+                        <g class="coverage__marker" data-city="Bricquebec">
+                            <circle class="coverage__marker-circle" cx="170" cy="110" r="5" />
+                            <text class="coverage__marker-label" x="170" y="100">Bricquebec</text>
+                        </g>
+                    </svg>
+                </div>
+                <div class="coverage__legend">
+                    <div class="coverage__legend-item">
+                        <span class="coverage__legend-dot coverage__legend-dot--main"></span>
+                        <span>Siège social</span>
+                    </div>
+                    <div class="coverage__legend-item">
+                        <span class="coverage__legend-dot coverage__legend-dot--zone"></span>
+                        <span>Zone d'intervention</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

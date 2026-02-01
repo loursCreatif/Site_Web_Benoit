@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO Meta Tags -->
+    <title>ÉlecPro | Électricien Généraliste & Spécialiste Bornes IRVE - Lyon</title>
+    <meta name="description"
+        content="Électricien professionnel à Lyon : installations, dépannages, rénovations et mise aux normes NF C 15-100. Spécialiste certifié IRVE pour bornes de recharge véhicules électriques. Réponse sous 48h.">
+    <meta name="keywords"
+        content="électricien, électricien généraliste, installation électrique, rénovation électrique, dépannage électrique, mise aux normes, borne recharge, véhicule électrique, IRVE, wallbox, Lyon">
+    <meta name="author" content="ÉlecPro">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.elecpro.fr/">
+    <meta property="og:title" content="ÉlecPro | Électricien Généraliste & Spécialiste Bornes IRVE">
+    <meta property="og:description"
+        content="Électricien généraliste et spécialiste bornes de recharge IRVE à Lyon. Installations, dépannages, rénovations pour particuliers et professionnels. Devis gratuit.">
+    <meta property="og:image" content="https://www.elecpro.fr/assets/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.elecpro.fr/">
+    <meta property="twitter:title" content="ÉlecPro | Électricien Généraliste & Spécialiste Bornes IRVE">
+    <meta property="twitter:description"
+        content="Électricien généraliste et spécialiste bornes de recharge IRVE à Lyon. Installations, dépannages, rénovations pour particuliers et professionnels.">
+    <meta property="twitter:image" content="https://www.elecpro.fr/assets/images/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/sections/header.css">
+    <link rel="stylesheet" href="css/sections/hero.css">
+
+    <link rel="stylesheet" href="css/sections/services.css">
+
+
+    <link rel="stylesheet" href="css/sections/gallery.css">
+    <link rel="stylesheet" href="css/sections/testimonials.css">
+    <link rel="stylesheet" href="css/sections/coverage.css">
+    <link rel="stylesheet" href="css/sections/faq.css">
+    <link rel="stylesheet" href="css/sections/contact.css">
+    <link rel="stylesheet" href="css/sections/about.css">
+    <link rel="stylesheet" href="css/sections/footer.css">
+    <link rel="stylesheet" href="css/sections/modal-quote.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Electrician",
+        "name": "ÉlecPro",
+        "description": "Électricien généraliste et spécialiste bornes de recharge IRVE à Lyon. Installations, dépannages, rénovations pour particuliers et professionnels.",
+        "url": "https://www.elecpro.fr",
+        "telephone": "+33749457923",
+        "email": "contact@elecpro.fr",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lyon",
+            "addressRegion": "Auvergne-Rhône-Alpes",
+            "addressCountry": "FR"
+        },
+        "priceRange": "€€",
+        "serviceType": [
+            "Installation électrique générale",
+            "Rénovation électrique",
+            "Dépannage électrique",
+            "Mise aux normes NF C 15-100",
+            "Bornes de recharge IRVE",
+            "Éclairage et domotique",
+            "Tableaux électriques"
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Sections chargées dynamiquement -->
+    <div id="header-section"></div>
+
+    <main>
+        <div id="hero-section"></div>
+
+        <div id="services-section"></div>
+        <div id="about-section"></div>
+
+        <div id="gallery-section"></div>
+        <div id="testimonials-section"></div>
+        <div id="faq-section"></div>
+        <div id="coverage-section"></div>
+    </main>
+
+    <div id="footer-section"></div>
+
+    <!-- Modal Devis -->
+    <div id="quote-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">Demande de Devis</h3>
+                <p class="modal-desc">Remplissez ce formulaire pour préparer votre message</p>
+            </div>
+            <form id="quote-form" class="quote-form">
+                <div class="form-group">
+                    <label class="form-label" for="quote-name">Nom Prénom</label>
+                    <input type="text" id="quote-name" name="name" class="form-input" placeholder="Votre nom complet"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="quote-email">Email</label>
+                    <input type="email" id="quote-email" name="email" class="form-input" placeholder="votre@email.com"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="quote-phone">Téléphone</label>
+                    <input type="tel" id="quote-phone" name="phone" class="form-input" placeholder="06 12 34 56 78"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="quote-subject">Objet de la demande</label>
+                    <select id="quote-subject" name="subject" class="form-select" required>
+                        <option value="Devis Électricité Générale">Devis Électricité Générale</option>
+                        <option value="Devis Borne de Recharge">Devis Borne de Recharge</option>
+                        <option value="Dépannage">Dépannage</option>
+                        <option value="Rénovation">Rénovation</option>
+                        <option value="Autre">Autre</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="quote-object">Détails</label>
+                    <textarea id="quote-object" name="object" class="form-textarea"
+                        placeholder="Décrivez brièvement votre besoin..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn--primary form-submit">Envoyer ma demande</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/theme.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="js/gallery.js"></script>
+    <script src="js/accordion.js"></script>
+    <script src="js/form-validation.js"></script>
+    <script src="js/modal-quote.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,346 @@
+/* ============================================
+   COVERAGE SECTION - ÉLECTRICIEN PRO
+   Zone d'intervention
+   ============================================ */
+
+.coverage {
+    padding: var(--space-24) 0;
+    position: relative;
+}
+
+.coverage__container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--space-12);
+    align-items: center;
+}
+
+/* Contenu */
+.coverage__content {
+    max-width: 480px;
+}
+
+.coverage__badge {
+    margin-bottom: var(--space-4);
+}
+
+.coverage__title {
+    margin-bottom: var(--space-4);
+}
+
+.coverage__title span {
+    color: var(--color-electric-blue);
+}
+
+.coverage__text {
+    color: var(--text-muted);
+    margin-bottom: var(--space-8);
+}
+
+/* Liste des villes */
+.coverage__cities {
+    margin-bottom: var(--space-8);
+}
+
+.coverage__cities-title {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-4);
+}
+
+.coverage__cities-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+}
+
+.coverage__city {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    padding: var(--space-2) var(--space-4);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-full);
+    transition: var(--transition-all);
+    cursor: default;
+}
+
+.coverage__city svg {
+    color: var(--color-electric-blue);
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    transition: var(--transition-all);
+}
+
+.coverage__city:hover,
+.coverage__city--active {
+    background: var(--color-electric-blue-glow);
+    border-color: var(--color-electric-blue);
+    color: var(--text-primary);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.2);
+}
+
+.coverage__city:hover svg,
+.coverage__city--active svg {
+    transform: scale(1.1);
+}
+
+/* Info intervention */
+.coverage__info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+}
+
+.coverage__info-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    transition: var(--transition-all);
+}
+
+.coverage__info-item:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--color-electric-blue);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.coverage__info-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-electric-blue-glow);
+    border-radius: var(--radius-lg);
+    color: var(--color-electric-blue);
+    flex-shrink: 0;
+}
+
+.coverage__info-content {
+    flex: 1;
+}
+
+.coverage__info-label {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+}
+
+.coverage__info-value {
+    font-family: var(--font-display);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    font-size: var(--text-lg);
+}
+
+/* Carte */
+.coverage__map {
+    position: relative;
+    height: 100%;
+    min-height: 400px;
+}
+
+.coverage__map-wrapper {
+    position: relative;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    aspect-ratio: 4/3;
+}
+
+.coverage__map-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.coverage__zone {
+    fill: var(--color-electric-blue-glow);
+    stroke: var(--color-electric-blue);
+    stroke-width: 2;
+    transition: var(--transition-all);
+}
+
+.coverage__zone:hover {
+    fill: rgba(0, 212, 255, 0.3);
+}
+
+.coverage__marker {
+    cursor: pointer;
+    transition: var(--transition-all);
+}
+
+.coverage__marker-circle {
+    fill: var(--color-electric-blue);
+    stroke: var(--color-deep-black);
+    stroke-width: 2;
+}
+
+.coverage__marker-pulse {
+    fill: none;
+    stroke: var(--color-electric-blue);
+    stroke-width: 2;
+    opacity: 0;
+}
+
+.coverage__marker:hover .coverage__marker-circle,
+.coverage__marker--active .coverage__marker-circle {
+    fill: var(--color-neon-green);
+    r: 8;
+}
+
+.coverage__marker:hover .coverage__marker-pulse,
+.coverage__marker--active .coverage__marker-pulse {
+    animation: marker-pulse 1.5s ease-out infinite;
+}
+
+@keyframes marker-pulse {
+    0% {
+        r: 8;
+        opacity: 0.8;
+    }
+
+    100% {
+        r: 20;
+        opacity: 0;
+    }
+}
+
+.coverage__marker-label {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: var(--font-bold);
+    fill: var(--text-primary);
+    text-anchor: middle;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.coverage__marker:hover .coverage__marker-label,
+.coverage__marker--active .coverage__marker-label {
+    opacity: 1;
+}
+
+/* Tooltip carte */
+.coverage__tooltip {
+    position: absolute;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3) var(--space-4);
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, -100%);
+    transition: opacity var(--transition-fast);
+    z-index: 10;
+}
+
+.coverage__tooltip--visible {
+    opacity: 1;
+}
+
+.coverage__tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top-color: var(--border-color);
+}
+
+.coverage__tooltip-city {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.coverage__tooltip-time {
+    font-size: var(--text-xs);
+    color: var(--color-neon-green);
+}
+
+/* Légende */
+.coverage__legend {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-6);
+    margin-top: var(--space-6);
+}
+
+.coverage__legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.coverage__legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: var(--radius-full);
+}
+
+.coverage__legend-dot--main {
+    background: var(--color-electric-blue);
+}
+
+.coverage__legend-dot--zone {
+    background: var(--color-electric-blue-glow);
+    border: 2px solid var(--color-electric-blue);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .coverage__container {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .coverage__content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .coverage__cities-grid {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .coverage__info {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .coverage__cities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .coverage__legend {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-2);
+    }
+}
