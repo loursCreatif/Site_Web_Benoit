@@ -50,16 +50,16 @@ const galleryData = [
 ];
 
 const testimonialsData = [
-    { text: "Installation de ma borne Wallbox parfaite ! L'équipe a été professionnelle, rapide et m'a bien expliqué le fonctionnement. Je recommande vivement.", name: 'Marie L.', location: 'La Hague - Borne résidentielle', initials: 'ML', type: 'borne' },
-    { text: "Nous avons fait installer 4 bornes dans notre copropriété. Le devis était clair, les travaux propres et dans les délais. Excellente expérience.", name: 'Pierre D.', location: 'Copropriété Les Pieux', initials: 'PD', type: 'borne' },
-    { text: "Bornes de recharge installées pour nos clients. Service impeccable et suivi après-installation au top !", name: 'Sophie M.', location: 'Restaurant Cherbourg - Pro', initials: 'SM', type: 'borne' },
-    { text: "Dépannage urgent un dimanche soir. Intervenu en 1h, problème résolu. Très réactif et professionnel.", name: 'Jean-Claude B.', location: 'Beaumont - Dépannage', initials: 'JB', type: 'depannage' },
-    { text: "Rénovation électrique complète de notre maison des années 70. Travail soigné, conforme aux normes, et équipe très professionnelle.", name: 'Isabelle R.', location: 'Valognes - Rénovation', initials: 'IR', type: 'renovation' },
-    { text: "Mise aux normes de notre tableau électrique + installation éclairage LED. Devis respecté, interventions rapides et propres.", name: 'Marc T.', location: 'Bricquebec - Mise aux normes', initials: 'MT', type: 'electricite' },
-    { text: "Installation photovoltaïque couplée à une borne de recharge. Très satisfait du conseil et de la réalisation.", name: "Bernard K.", location: "Cherbourg - Solaire & IRVE", initials: "BK", type: "borne" },
-    { text: "Réactivité exemplaire pour une remise en conformité avant vente immobilière. Merci Benoit !", name: "Catherine D.", location: "Les Pieux - Urgence", initials: "CD", type: "depannage" },
-    { text: "Électricien sérieux, ponctuel et de bon conseil pour la mise aux normes de mon commerce.", name: "Jean-Pierre L.", location: "La Hague - Professionnel", initials: "JL", type: "electricite" },
-    { text: "Très bon contact, devis rapide et prix compétitifs pour ma Wallbox. Je recommande les yeux fermés.", name: "Antoine S.", location: "Flamanville - Borne", initials: "AS", type: "borne" }
+    { text: "Installation de ma borne Wallbox parfaite ! L'équipe a été professionnelle, rapide et m'a bien expliqué le fonctionnement. Je recommande vivement.", name: 'Marie L.', location: 'La Hague - Borne résidentielle', initials: 'ML', type: 'borne', rating: 5 },
+    { text: "Nous avons fait installer 4 bornes dans notre copropriété. Le devis était clair, les travaux propres et dans les délais. Excellente expérience.", name: 'Pierre D.', location: 'Copropriété Les Pieux', initials: 'PD', type: 'borne', rating: 4 },
+    { text: "Bornes de recharge installées pour nos clients. Service impeccable et suivi après-installation au top !", name: 'Sophie M.', location: 'Restaurant Cherbourg - Pro', initials: 'SM', type: 'borne', rating: 5 },
+    { text: "Dépannage urgent un dimanche soir. Intervenu en 1h, problème résolu. Très réactif et professionnel.", name: 'Jean-Claude B.', location: 'Beaumont - Dépannage', initials: 'JB', type: 'depannage', rating: 5 },
+    { text: "Rénovation électrique complète de notre maison des années 70. Travail soigné, conforme aux normes, et équipe très professionnelle.", name: 'Isabelle R.', location: 'Valognes - Rénovation', initials: 'IR', type: 'renovation', rating: 4 },
+    { text: "Mise aux normes de notre tableau électrique + installation éclairage LED. Devis respecté, interventions rapides et propres.", name: 'Marc T.', location: 'Bricquebec - Mise aux normes', initials: 'MT', type: 'electricite', rating: 5 },
+    { text: "Installation photovoltaïque couplée à une borne de recharge. Très satisfait du conseil et de la réalisation.", name: "Bernard K.", location: "Cherbourg - Solaire & IRVE", initials: "BK", type: "borne", rating: 5 },
+    { text: "Réactivité exemplaire pour une remise en conformité avant vente immobilière. Merci Benoit !", name: "Catherine D.", location: "Les Pieux - Urgence", initials: "CD", type: "depannage", rating: 5 },
+    { text: "Électricien sérieux, ponctuel et de bon conseil pour la mise aux normes de mon commerce.", name: "Jean-Pierre L.", location: "La Hague - Professionnel", initials: "JL", type: "electricite", rating: 4 },
+    { text: "Très bon contact, devis rapide et prix compétitifs pour ma Wallbox. Je recommande les yeux fermés.", name: "Antoine S.", location: "Flamanville - Borne", initials: "AS", type: "borne", rating: 5 }
 ];
 
 const cities = ['La Hague', 'Cherbourg', 'Les Pieux', 'Bricquebec', 'Flamanville'];
@@ -73,7 +73,7 @@ const coverageInfo = [
 const trustBadges = [
     { icon: 'shield', value: 'Certifié', label: 'IRVE' },
     { icon: 'file-text', value: 'Devis', label: 'Gratuit' },
-    { icon: 'shield-check', value: '10 ans', label: 'Garantie' }
+    { icon: 'shield-check', value: 'Travail', label: 'Garanti' }
 ];
 
 // Générateur de SVG star
@@ -176,7 +176,7 @@ function populateDynamicContent() {
         testimonialsSlides.innerHTML = testimonialsData.map(t => `
             <div class="testimonials__slide">
                 <div class="testimonial-card">
-                    <div class="testimonial-card__stars">${createStars(5)}</div>
+                    <div class="testimonial-card__stars">${createStars(t.rating || 5)}</div>
                     <p class="testimonial-card__text">"${t.text}"</p>
                     <div class="testimonial-card__author">
                         <div class="testimonial-card__avatar">${t.initials}</div>

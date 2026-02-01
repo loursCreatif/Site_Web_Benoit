@@ -42,11 +42,8 @@
     height: 120px;
     width: auto;
     object-fit: contain;
-    background-color: rgba(200, 200, 200, 0.3);
-    /* Fond gris clair subtil */
+    /* Background removed for transparency */
     border-radius: var(--radius-sm);
-    padding: 0 6px;
-    /* Padding horizontal uniquement */
 }
 
 .header__logo-icon {

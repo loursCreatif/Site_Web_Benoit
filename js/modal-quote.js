@@ -11,11 +11,20 @@ function initQuoteModal() {
     // We will add this class .js-open-quote-modal to the buttons
 
     // Function to open modal
-    function openModal(e) {
+    function openModal(e, button) {
         if (e) e.preventDefault();
         if (modal) {
             modal.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+            // Présélectionner l'objet de la demande si spécifié
+            if (button && button.hasAttribute('data-subject')) {
+                const subjectValue = button.getAttribute('data-subject');
+                const subjectSelect = document.getElementById('quote-subject');
+                if (subjectSelect) {
+                    subjectSelect.value = subjectValue;
+                }
+            }
         }
     }
 
@@ -31,7 +40,7 @@ function initQuoteModal() {
     document.addEventListener('click', (e) => {
         const target = e.target.closest('.js-open-quote-modal');
         if (target) {
-            openModal(e);
+            openModal(e, target);
         }
     });
 
