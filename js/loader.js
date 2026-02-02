@@ -292,25 +292,12 @@ async function init() {
     if (typeof initScrollAnimations === 'function') initScrollAnimations();
     if (typeof initParticles === 'function') initParticles();
     if (typeof initCounters === 'function') initCounters();
-    if (typeof initSimulator === 'function') initSimulator();
     if (typeof initSmoothScroll === 'function') initSmoothScroll();
     if (typeof initBackToTop === 'function') initBackToTop();
     if (typeof ThemeManager !== 'undefined') ThemeManager.init();
     if (typeof initGallery === 'function') initGallery();
     if (typeof initAccordion === 'function') initAccordion();
     if (typeof initCarousel === 'function') initCarousel();
-
-    // Initialiser l'animation électrique après un petit délai pour s'assurer que le DOM est prêt
-    setTimeout(() => {
-        if (typeof ElectricalAnimation !== 'undefined') {
-            console.log('Loader: Initializing ElectricalAnimation...');
-            const container = document.getElementById('electrical-animation');
-            console.log('Loader: Container found?', !!container);
-            const animation = new ElectricalAnimation('electrical-animation');
-        } else {
-            console.warn('Loader: ElectricalAnimation class not found');
-        }
-    }, 500);
 }
 
 // Démarrer au chargement

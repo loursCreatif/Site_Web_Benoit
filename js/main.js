@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initParticles();
     initCounters();
-    initSimulator();
+
     initGallery();
     initAccordion();
     initFormValidation();
@@ -261,73 +261,4 @@ function initBackToTop() {
             behavior: 'smooth'
         });
     });
-}
-
-/**
- * RIPPLE EFFECT
- * Effet d'ondulation sur les boutons
- */
-document.querySelectorAll('.ripple').forEach(button => {
-    button.addEventListener('click', function (e) {
-        const ripple = document.createElement('span');
-        ripple.className = 'ripple__effect';
-
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
-
-        ripple.style.width = ripple.style.height = `${size}px`;
-        ripple.style.left = `${x}px`;
-        ripple.style.top = `${y}px`;
-
-        this.appendChild(ripple);
-
-        setTimeout(() => ripple.remove(), 600);
-    });
-});
-
-/**
- * UTILITY FUNCTIONS
- */
-
-// Debounce function
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Throttle function
-function throttle(func, limit) {
-    let inThrottle;
-    return function (...args) {
-        if (!inThrottle) {
-            func.apply(this, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
-}
-
-// Format number with separators
-function formatNumber(num) {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
-}
-
-// Check if element is in viewport
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
 }

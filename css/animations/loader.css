@@ -1,0 +1,120 @@
+/* ============================================
+   ANIMATIONS - LOADER ÉLECTRIQUE
+   ============================================ */
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-loader);
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loader--hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader__content {
+    text-align: center;
+}
+
+.loader__icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--space-4);
+    position: relative;
+}
+
+.loader__plug {
+    width: 100%;
+    height: 100%;
+    animation: loader-pulse 1.5s ease-in-out infinite;
+}
+
+.loader__spark {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--color-electric-blue);
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.loader__spark:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation: spark 0.5s ease-out infinite;
+    animation-delay: 0s;
+}
+
+.loader__spark:nth-child(2) {
+    top: 30%;
+    right: 10%;
+    animation: spark 0.5s ease-out infinite;
+    animation-delay: 0.2s;
+}
+
+.loader__spark:nth-child(3) {
+    bottom: 20%;
+    left: 30%;
+    animation: spark 0.5s ease-out infinite;
+    animation-delay: 0.4s;
+}
+
+.loader__text {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    color: var(--color-electric-blue);
+    animation: loader-text 1.5s ease-in-out infinite;
+}
+
+@keyframes loader-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px var(--color-electric-blue-glow));
+    }
+
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 20px var(--color-electric-blue)) drop-shadow(0 0 40px var(--color-electric-blue));
+    }
+}
+
+@keyframes spark {
+    0% {
+        opacity: 0;
+        transform: scale(0) translate(0, 0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1) translate(-10px, -10px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0) translate(-20px, -20px);
+    }
+}
+
+@keyframes loader-text {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 10px var(--color-electric-blue-glow);
+    }
+}

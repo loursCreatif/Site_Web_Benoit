@@ -1,0 +1,9 @@
+/* ============================================
+   ANIMATIONS - INDEX
+   Fichier principal qui importe tous les modules
+   ============================================ */
+
+@import 'loader.css';
+@import 'reveal.css';
+@import 'effects.css';
+@import 'utilities.css';

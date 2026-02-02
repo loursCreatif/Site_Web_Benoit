@@ -27,7 +27,6 @@
 
     /* Section spacing */
     .services,
-    .simulator,
     .gallery,
     .testimonials,
     .coverage,
@@ -63,7 +62,6 @@
 
     /* Section spacing */
     .services,
-    .simulator,
     .gallery,
     .testimonials,
     .coverage,
@@ -101,28 +99,6 @@
 
     .section-header__title {
         font-size: var(--text-2xl);
-    }
-
-    /* Simulator */
-    .simulator__wrapper {
-        border-radius: var(--radius-xl);
-    }
-
-    .simulator__content {
-        padding: var(--space-5);
-    }
-
-    .simulator__options {
-        grid-template-columns: 1fr;
-    }
-
-    .simulator__nav {
-        flex-direction: column;
-        gap: var(--space-3);
-    }
-
-    .simulator__nav-btn {
-        width: 100%;
     }
 
     /* Gallery */
