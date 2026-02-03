@@ -43,7 +43,7 @@ const irveFeatures = [
 const galleryData = [
     { category: 'residentiel', title: 'Installation Wallbox Maison', location: 'La Hague', image: 'assets/images/portfolio/portfolio_ev_charger_wallbox_1769950807636.png', wide: true },
     { category: 'electricite', title: 'Éclairage Cuisine LED', location: 'Valognes', image: 'assets/images/portfolio/portfolio_led_lighting_kitchen_1769950857292.png' },
-    { category: 'commerce', title: 'Atelier Industriel', location: 'Tourlaville', image: 'assets/images/portfolio/portfolio_industrial_workshop_wiring_1769951574040.png' },
+
     { category: 'electricite', title: 'Éclairage Façade', location: 'Réalisation récente', image: 'assets/images/portfolio/realisation_uploaded_1.jpg', wide: true },
     { category: 'electricite', title: 'Éclairage Extérieur', location: 'Réalisation récente', image: 'assets/images/portfolio/realisation_uploaded_2.jpg' },
     { category: 'electricite', title: 'Mise en valeur Jardin', location: 'Réalisation récente', image: 'assets/images/portfolio/realisation_uploaded_3.jpg' },
