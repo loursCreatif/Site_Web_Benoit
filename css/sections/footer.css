@@ -28,6 +28,11 @@
     margin-bottom: var(--space-4);
 }
 
+.footer__logo img {
+    height: 150px;
+    width: auto;
+}
+
 .footer__logo-icon {
     width: 40px;
     height: 40px;

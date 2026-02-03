@@ -154,7 +154,7 @@ function initFormValidation() {
             await simulateFormSubmission();
 
             // Afficher le message de succès
-            showFormMessage('success', 'Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.');
+            showFormMessage('success', 'Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.');
             form.reset();
 
             // Réinitialiser les états de validation
@@ -163,7 +163,7 @@ function initFormValidation() {
             });
 
         } catch (error) {
-            showFormMessage('error', 'Une erreur est survenue. Veuillez réessayer ou nous contacter directement par téléphone.');
+            showFormMessage('error', 'Une erreur est survenue. Veuillez réessayer ou me contacter directement par téléphone.');
         } finally {
             submitBtn.classList.remove('contact__submit--loading');
             submitBtn.disabled = false;

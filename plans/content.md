@@ -47,7 +47,7 @@ Entreprise d'électricité générale spécialisée dans l'installation de borne
 - **Sous-titre** : Installation, dépannage et mise aux normes. Devis gratuit sous 24h.
 - **CTA Principal** : "Simuler mon devis" (vers simulateur)
 - **CTA Secondaire** : "06 XX XX XX XX" (tel:)
-- **Preuve sociale** : "★★★★★ 4.9/5 - Plus de 500 installations"
+- **Preuve sociale** : "★★★★★ 4.9/5"
 
 #### Éléments visuels
 - Animation circuit électrique en fond

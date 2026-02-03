@@ -162,6 +162,7 @@
     --transition-fast: 150ms ease;
     --transition-base: 250ms ease;
     --transition-slow: 350ms ease;
+    --transition-all: all 250ms ease;
 
     --container-max: 1280px;
     --container-padding: 1rem;

@@ -6,6 +6,7 @@
 const sections = [
     { id: 'header-section', file: 'sections/header.html' },
     { id: 'hero-section', file: 'sections/hero.html' },
+    { id: 'stats-section', file: 'sections/stats.html' },
 
     { id: 'services-section', file: 'sections/services.html' },
     { id: 'about-section', file: 'sections/about.html' },
@@ -19,16 +20,16 @@ const sections = [
 // Données dynamiques
 const servicesData = {
     electric: [
-        { title: 'Installation Électrique', text: 'Installation complète neuve, rénovation électrique et mise aux normes NF C 15-100.', link: '#contact', linkText: 'En savoir plus', icon: 'server', image: 'assets/images/services/installation.png' },
-        { title: 'Dépannage Urgent', text: 'Intervention rapide 24h/24 pour toutes vos urgences électriques et recherches de pannes.', link: 'tel:+33749457923', linkText: 'Appeler maintenant', icon: 'alert-circle', image: 'assets/images/services/depannage.png' },
-        { title: 'Tableaux Électriques', text: 'Installation et mise aux normes de tableaux électriques, remplacement de disjoncteurs.', link: '#contact', linkText: 'En savoir plus', icon: 'grid', image: 'assets/images/services/tableau.png' },
-        { title: 'Éclairage & Domotique', text: "Installation d'éclairage LED, systèmes domotiques et volets roulants électriques.", link: '#contact', linkText: 'En savoir plus', icon: 'sun', image: 'assets/images/services/eclairage.png' }
+        { title: 'Installation Électrique', text: 'Installation complète neuve, rénovation électrique et mise aux normes NF C 15-100.', link: '#contact', linkText: 'En savoir plus', icon: 'server', image: 'assets/images/services/installation.png', subject: 'Devis Électricité Générale' },
+        { title: 'Dépannage Urgent', text: 'Intervention rapide 24h/24 pour toutes vos urgences électriques et recherches de pannes.', link: 'tel:+33749457923', linkText: 'Appeler maintenant', icon: 'alert-circle', image: 'assets/images/services/depannage.png', subject: 'Dépannage' },
+        { title: 'Tableaux Électriques', text: 'Installation et mise aux normes de tableaux électriques, remplacement de disjoncteurs.', link: '#contact', linkText: 'En savoir plus', icon: 'grid', image: 'assets/images/services/tableau.png', subject: 'Rénovation' },
+        { title: 'Éclairage & Domotique', text: "Installation d'éclairage LED, systèmes domotiques et volets roulants électriques.", link: '#contact', linkText: 'En savoir plus', icon: 'sun', image: 'assets/images/services/eclairage.png', subject: 'Devis Électricité Générale' }
     ],
     borne: [
-        { title: 'Installation Résidentielle', text: 'Borne wallbox murale ou sur pied, installation intérieure/extérieure, optimisée pour votre habitation.', link: '#simulateur', linkText: 'Simuler mon devis', icon: 'home', image: 'assets/images/services/borne_residentielle.png' },
-        { title: 'Copropriété & Collectif', text: 'Étude de faisabilité, installation de bornes partagées avec système de gestion de charge.', link: '#contact', linkText: 'Demander une étude', icon: 'users', image: 'assets/images/services/borne_copropriete.png' },
-        { title: 'Commerces & Entreprises', text: "Bornes pour parking client, flotte d'entreprise, bornes rapides DC avec monitoring.", link: '#contact', linkText: 'Devis entreprise', icon: 'building', image: 'assets/images/services/borne_entreprise.png' },
-        { title: 'Bornes Intelligentes', text: 'Gestion dynamique de puissance, programmation heures creuses, application mobile de contrôle.', link: '#contact', linkText: 'En savoir plus', icon: 'cpu', image: 'assets/images/services/borne_intelligente.png' }
+        { title: 'Installation Résidentielle', text: 'Borne wallbox murale ou sur pied, installation intérieure/extérieure, optimisée pour votre habitation.', link: '#simulateur', linkText: 'Simuler mon devis', icon: 'home', image: 'assets/images/services/borne_residentielle.png', subject: 'Devis Borne de Recharge' },
+        { title: 'Copropriété & Collectif', text: 'Étude de faisabilité, installation de bornes partagées avec système de gestion de charge.', link: '#contact', linkText: 'Demander une étude', icon: 'users', image: 'assets/images/services/borne_copropriete.png', subject: 'Devis Borne de Recharge' },
+        { title: 'Commerces & Entreprises', text: "Bornes pour parking client, flotte d'entreprise, bornes rapides DC avec monitoring.", link: '#contact', linkText: 'Devis entreprise', icon: 'building', image: 'assets/images/services/borne_entreprise.png', subject: 'Devis Borne de Recharge' },
+        { title: 'Bornes Intelligentes', text: 'Gestion dynamique de puissance, programmation heures creuses, application mobile de contrôle.', link: '#contact', linkText: 'En savoir plus', icon: 'cpu', image: 'assets/images/services/borne_intelligente.png', subject: 'Devis Borne de Recharge' }
     ]
 };
 
@@ -41,12 +42,13 @@ const irveFeatures = [
 
 const galleryData = [
     { category: 'residentiel', title: 'Installation Wallbox Maison', location: 'La Hague', image: 'assets/images/portfolio/portfolio_ev_charger_wallbox_1769950807636.png', wide: true },
-    { category: 'electricite', title: 'Rénovation Tableau', location: 'Cherbourg', image: 'assets/images/portfolio/portfolio_electrical_panel_1769950830736.png' },
     { category: 'electricite', title: 'Éclairage Cuisine LED', location: 'Valognes', image: 'assets/images/portfolio/portfolio_led_lighting_kitchen_1769950857292.png' },
-    { category: 'commerce', title: 'Plateau Bureaux', location: 'Equeurdreville', image: 'assets/images/portfolio/portfolio_commercial_office_wiring_1769950886729.png', wide: true },
-    { category: 'residentiel', title: 'Installation Récente', location: 'Beaumont', image: 'assets/images/portfolio/uploaded_media_1769948325878.png' },
-    { category: 'electricite', title: 'Éclairage Extérieur', location: 'Barfleur', image: 'assets/images/portfolio/portfolio_outdoor_lighting_garden_1769951558414.png' },
-    { category: 'commerce', title: 'Atelier Industriel', location: 'Tourlaville', image: 'assets/images/portfolio/portfolio_industrial_workshop_wiring_1769951574040.png' }
+    { category: 'commerce', title: 'Atelier Industriel', location: 'Tourlaville', image: 'assets/images/portfolio/portfolio_industrial_workshop_wiring_1769951574040.png' },
+    { category: 'electricite', title: 'Éclairage Façade', location: 'Réalisation récente', image: 'assets/images/portfolio/realisation_uploaded_1.jpg', wide: true },
+    { category: 'electricite', title: 'Éclairage Extérieur', location: 'Réalisation récente', image: 'assets/images/portfolio/realisation_uploaded_2.jpg' },
+    { category: 'electricite', title: 'Mise en valeur Jardin', location: 'Réalisation récente', image: 'assets/images/portfolio/realisation_uploaded_3.jpg' },
+    { category: 'residentiel', title: 'Appliques Design', location: 'Réalisation récente', image: 'assets/images/portfolio/realisation_uploaded_4.jpg' },
+    { category: 'residentiel', title: 'Mise en valeur Intérieure', location: 'Réalisation récente', image: 'assets/images/portfolio/realisation_uploaded_5.jpg' }
 ];
 
 const testimonialsData = [
@@ -124,12 +126,12 @@ function populateDynamicContent() {
     const servicesElectric = document.getElementById('services-electric');
     if (servicesElectric) {
         servicesElectric.innerHTML = servicesData.electric.map((s, i) => `
-            <article class="service-card service-card--electric reveal${i > 0 ? ` reveal--delay-${i}` : ''}">
+            <a href="${s.link}" class="service-card service-card--electric reveal${i > 0 ? ` reveal--delay-${i}` : ''} ${s.link.startsWith('tel:') ? '' : 'js-open-quote-modal'}" ${s.subject ? `data-subject="${s.subject}"` : ''}>
                 ${s.image ? `<div class="service-card__image"><img src="${s.image}" alt="${s.title}" loading="lazy"></div>` : ''}
                 <h4 class="service-card__title">${s.title}</h4>
                 <p class="service-card__text">${s.text}</p>
-                <a href="${s.link}" class="service-card__link">${s.linkText} ${getIcon('arrow-right')}</a>
-            </article>
+                <span class="service-card__link">${s.linkText} ${getIcon('arrow-right')}</span>
+            </a>
         `).join('');
     }
 
@@ -137,12 +139,12 @@ function populateDynamicContent() {
     const servicesBorne = document.getElementById('services-borne');
     if (servicesBorne) {
         servicesBorne.innerHTML = servicesData.borne.map((s, i) => `
-            <article class="service-card service-card--borne reveal${i > 0 ? ` reveal--delay-${i}` : ''}">
+            <a href="${s.link}" class="service-card service-card--borne reveal${i > 0 ? ` reveal--delay-${i}` : ''} ${s.link.startsWith('tel:') ? '' : 'js-open-quote-modal'}" ${s.subject ? `data-subject="${s.subject}"` : ''}>
                 ${s.image ? `<div class="service-card__image"><img src="${s.image}" alt="${s.title}" loading="lazy"></div>` : `<div class="service-card__icon">${getIcon(s.icon)}</div>`}
                 <h4 class="service-card__title">${s.title}</h4>
                 <p class="service-card__text">${s.text}</p>
-                <a href="${s.link}" class="service-card__link">${s.linkText} ${getIcon('arrow-right')}</a>
-            </article>
+                <span class="service-card__link">${s.linkText} ${getIcon('arrow-right')}</span>
+            </a>
         `).join('');
     }
 
