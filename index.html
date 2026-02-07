@@ -7,18 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- SEO Meta Tags -->
-    <title>ÉlecPro | Électricien Généraliste & Spécialiste Bornes IRVE - Lyon</title>
+    <title>BT Électricité | Électricien Généraliste & Spécialiste Bornes IRVE - Lyon</title>
     <meta name="description"
-        content="Électricien professionnel à Lyon : installations, dépannages, rénovations et mise aux normes. Spécialiste certifié IRVE pour bornes de recharge véhicules électriques. Devis gratuit.">
+        content="Électricien professionnel à Lyon : installations, dépannages, rénovations et mise aux normes. Spécialiste qualifié IRVE pour bornes de recharge véhicules électriques. Devis gratuit.">
     <meta name="keywords"
         content="électricien, électricien généraliste, installation électrique, rénovation électrique, dépannage électrique, mise aux normes, borne recharge, véhicule électrique, IRVE, wallbox, Lyon">
-    <meta name="author" content="ÉlecPro">
+    <meta name="author" content="BT Électricité">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.elecpro.fr/">
-    <meta property="og:title" content="ÉlecPro | Électricien Généraliste & Spécialiste Bornes IRVE">
+    <meta property="og:title" content="BT Électricité | Électricien Généraliste & Spécialiste Bornes IRVE">
     <meta property="og:description"
         content="Électricien généraliste et spécialiste bornes de recharge IRVE à Lyon. Installations, dépannages, rénovations pour particuliers et professionnels. Devis gratuit.">
     <meta property="og:image" content="https://www.elecpro.fr/assets/images/og-image.jpg">
@@ -26,7 +26,7 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.elecpro.fr/">
-    <meta property="twitter:title" content="ÉlecPro | Électricien Généraliste & Spécialiste Bornes IRVE">
+    <meta property="twitter:title" content="BT Électricité | Électricien Généraliste & Spécialiste Bornes IRVE">
     <meta property="twitter:description"
         content="Électricien généraliste et spécialiste bornes de recharge IRVE à Lyon. Installations, dépannages, rénovations pour particuliers et professionnels.">
     <meta property="twitter:image" content="https://www.elecpro.fr/assets/images/og-image.jpg">
@@ -69,11 +69,11 @@
     {
         "@context": "https://schema.org",
         "@type": "Electrician",
-        "name": "ÉlecPro",
+        "name": "BT Électricité",
         "description": "Électricien généraliste et spécialiste bornes de recharge IRVE",
         "url": "https://www.elecpro.fr",
         "telephone": "+33749457923",
-        "email": "contact@elecpro.fr",
+        "email": "contact@btelectricite.fr",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Lyon",
@@ -100,8 +100,6 @@
 
     <main>
         <div id="hero-section"></div>
-        <div id="stats-section"></div>
-
         <div id="services-section"></div>
         <div id="about-section"></div>
 
@@ -121,7 +119,13 @@
                 <h3 class="modal-title">Demande de Devis</h3>
                 <p class="modal-desc">Remplissez ce formulaire pour préparer votre message</p>
             </div>
-            <form id="quote-form" class="quote-form">
+            <form id="quote-form" class="quote-form" action="https://api.web3forms.com/submit" method="POST">
+                <!-- Web3Forms Configuration -->
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                <input type="hidden" name="subject" value="Nouvelle demande de devis - BT Électricité">
+                <input type="hidden" name="from_name" value="Site BT Électricité">
+                <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
                 <div class="form-group">
                     <label class="form-label" for="quote-name">Nom Prénom</label>
                     <input type="text" id="quote-name" name="name" class="form-input" placeholder="Votre nom complet"
@@ -139,7 +143,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="quote-subject">Objet de la demande</label>
-                    <select id="quote-subject" name="subject" class="form-select" required>
+                    <select id="quote-subject" name="type_demande" class="form-select" required>
                         <option value="Devis Électricité Générale">Devis Électricité Générale</option>
                         <option value="Devis Borne de Recharge">Devis Borne de Recharge</option>
                         <option value="Dépannage">Dépannage</option>
@@ -149,7 +153,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="quote-object">Détails</label>
-                    <textarea id="quote-object" name="object" class="form-textarea"
+                    <textarea id="quote-object" name="message" class="form-textarea"
                         placeholder="Décrivez brièvement votre besoin..." required></textarea>
                 </div>
                 <button type="submit" class="btn btn--primary form-submit">Envoyer ma demande</button>
@@ -162,6 +166,7 @@
     <script src="js/carousel.js"></script>
     <script src="js/loader.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/hero-slider.js"></script>
 
     <script src="js/gallery.js"></script>
     <script src="js/accordion.js"></script>

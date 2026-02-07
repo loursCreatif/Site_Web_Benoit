@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions Légales | BT Électricité</title>
+    <meta name="robots" content="noindex, follow">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <style>
+        .legal-page {
+            padding: 120px 0 80px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .legal-header {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .legal-section {
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .legal-section h2 {
+            color: var(--color-primary);
+            font-family: var(--font-secondary);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--color-primary);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .legal-section p,
+        .legal-section li {
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .legal-section b {
+            color: var(--color-text-bright);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-primary);
+            text-decoration: none;
+            margin-bottom: 30px;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        .placeholder-info {
+            background: rgba(var(--color-primary-rgb), 0.1);
+            color: var(--color-primary);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <div class="legal-page">
+            <a href="index.html" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Retour à l'accueil
+            </a>
+
+            <div class="legal-header">
+                <h1 class="section-title">Mentions <span class="highlight">Légales</span></h1>
+                <p>Informations obligatoires concernant l'entreprise et l'utilisation du site.</p>
+            </div>
+
+            <!-- 1. Éditeur du site -->
+            <section class="legal-section">
+                <h2>1. Éditeur du site</h2>
+                <p>Le site <b>BT Électricité</b> est édité par :</p>
+                <ul>
+                    <li><b>Nom / Raison sociale :</b> Benoit Taquet</li>
+                    <li><b>Statut :</b> Entrepreneur Individuel (Artisan)</li>
+                    <li><b>Adresse :</b> 1 b rue Thomas Helye, 50440 La Hague</li>
+                    <li><b>Téléphone :</b> +33 7 49 45 79 23</li>
+                    <li><b>E-mail :</b> contact@btelectricite.fr</li>
+                    <li><b>SIRET :</b> 929 433 787 00017</li>
+                    <li><b>N° TVA :</b> FR 95929433787</li>
+                    <li><b>Répertoire des Métiers :</b> Immatriculé au RM sous le numéro 929 433 787 (La Hague)</li>
+                </ul>
+            </section>
+
+            <!-- 2. Hébergeur du site -->
+            <section class="legal-section">
+                <h2>2. Hébergeur du site</h2>
+                <p>Le site est hébergé par :</p>
+                <ul>
+                    <li><b>Nom :</b> Hostingueur</li>
+                    <li><b>Site web :</b> <a href="https://www.hostingueur.fr" target="_blank"
+                            style="color: var(--color-primary);">www.hostingueur.fr</a></li>
+                </ul>
+            </section>
+
+            <!-- 3. Assurances -->
+            <section class="legal-section">
+                <h2>3. Assurances</h2>
+                <ul>
+                    <li><b>Responsabilité Civile Pro & Décennale :</b> Groupama Centre Manche (10 rue Blaise Pascal,
+                        28008 Chartres)</li>
+                    <li><b>Contrat n° :</b> 616518010004</li>
+                    <li><b>Couverture :</b> France</li>
+                </ul>
+            </section>
+
+            <!-- 4. Données personnelles -->
+            <section class="legal-section">
+                <h2>4. Données personnelles</h2>
+                <p>Les données collectées (nom, e-mail, téléphone) servent uniquement à répondre à vos demandes.</p>
+                <p>Droit d'accès et suppression : <b>contact@btelectricite.fr</b>.</p>
+            </section>
+
+            <!-- 5. Médiation -->
+            <section class="legal-section">
+                <h2>5. Médiation de la consommation</h2>
+                <p>En cas de litige, vous pouvez saisir le médiateur de la consommation :</p>
+                <ul>
+                    <li><b>Organisme :</b> CM2C (Consommation Médiation et Conciliation)</li>
+                    <li><b>Adresse :</b> 49 rue de Ponthieu, 75008 Paris</li>
+                    <li><b>E-mail :</b> cm2c@cm2c.net</li>
+                    <li><b>Site web :</b> <a href="https://www.cm2c.net" target="_blank"
+                            style="color: var(--color-primary);">www.cm2c.net</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>

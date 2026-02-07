@@ -14,7 +14,7 @@
             <div class="faq__contact">
                 <h3 class="faq__contact-title">D'autres questions ?</h3>
                 <p class="faq__contact-text">
-                    Je suis à votre disposition pour vous répondre sous 24h.
+                    Je suis à votre disposition.
                 </p>
                 <a href="#" class="btn btn--primary faq__contact-btn js-open-quote-modal">
                     Contactez-moi
@@ -24,14 +24,6 @@
 
         <!-- Main Content -->
         <div class="faq__main">
-            <!-- Filters -->
-            <div class="faq__categories reveal reveal--delay-1">
-                <button class="faq__category faq__category--active" data-category="all">Tout</button>
-                <button class="faq__category" data-category="technique">Technique</button>
-                <button class="faq__category" data-category="financier">Aides & Coûts</button>
-                <button class="faq__category" data-category="security">Sécurité & Normes</button>
-            </div>
-
             <!-- Accordion -->
             <div class="faq__accordion reveal reveal--delay-2">
 
@@ -62,32 +54,7 @@
                     </div>
                 </div>
 
-                <!-- Q2 -->
-                <div class="faq__item" data-category="technique">
-                    <button class="faq__question">
-                        <span class="faq__question-text">Différences chiffrées entre Prise Renforcée et Borne ?</span>
-                        <span class="faq__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </span>
-                    </button>
-                    <div class="faq__answer">
-                        <div class="faq__answer-content">
-                            <p>Au-delà de la vitesse de charge (3.7kW vs 7.4kW+), la différence est fiscale et technique
-                                :</p>
-                            <ul>
-                                <li><strong>Prise Renforcée :</strong> ~500€ installée. Pas de crédit d'impôt.
-                                    Dispositif "passif".</li>
-                                <li><strong>Borne de Recharge :</strong> 1000-2000€. Crédit d'impôt (500€), TVA 5.5%.
-                                    Dispositif "actif" avec gestion dynamique possible.</li>
-                            </ul>
-                            <p>Le coût "reste à charge" d'une borne est souvent compétitif grâce aux aides.</p>
-                        </div>
-                    </div>
-                </div>
+
 
                 <!-- Q3 -->
                 <div class="faq__item" data-category="technique">
@@ -193,31 +160,7 @@
                     </div>
                 </div>
 
-                <!-- Q7 -->
-                <div class="faq__item" data-category="financier">
-                    <button class="faq__question">
-                        <span class="faq__question-text">Quel budget pour une rénovation électrique ?</span>
-                        <span class="faq__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </span>
-                    </button>
-                    <div class="faq__answer">
-                        <div class="faq__answer-content">
-                            <p>Les estimations moyennes sont :</p>
-                            <ul>
-                                <li><strong>Remplacement Tableau (T3 standard) :</strong> 1 000 € - 2 000 €.</li>
-                                <li><strong>Rénovation Complète :</strong> 100€ à 200€ du m² (soit 10k€-20k€ pour
-                                    100m²).</li>
-                            </ul>
-                            <p>Une installation aux normes valorise votre bien immobilier et est sécurisante pour la
-                                vente (Diagnostic DEO).</p>
-                        </div>
-                    </div>
-                </div>
+
 
                 <!-- Q8 -->
                 <div class="faq__item" data-category="security">
@@ -234,40 +177,18 @@
                     <div class="faq__answer">
                         <div class="faq__answer-content">
                             <ul>
-                                <li><strong>Mise en Sécurité :</strong> Le minimum légal pour habiter/louer sans danger
-                                    (coupure générale, terre, différentiel). Suffisant pour l'existant.</li>
+                                <li><strong>Mise en Sécurité (norme NF C 16-600) :</strong> Le minimum légal pour
+                                    habiter/louer sans danger
+                                    (coupure générale, terre, différentiel...).</li>
                                 <li><strong>Mise en Conformité (NF C 15-100) :</strong> Respect strict de la norme
-                                    actuelle (nombre de prises par pièce, RJ45...). Obligatoire pour le neuf ; pas
-                                    forcément pour l'installation d'une borne (sécurité suffit).</li>
+                                    actuelle (nombre de prises par pièce, RJ45...). Obligatoire pour le neuf.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <!-- Q9 -->
-                <div class="faq__item" data-category="technique">
-                    <button class="faq__question">
-                        <span class="faq__question-text">Panne totale d'électricité : Que faire ?</span>
-                        <span class="faq__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </span>
-                    </button>
-                    <div class="faq__answer">
-                        <div class="faq__answer-content">
-                            <ol>
-                                <li>Vérifiez si le quartier est coupé (éclairage public). Si oui, appelez Enedis.</li>
-                                <li>Si c'est juste chez vous, vérifiez le disjoncteur général.</li>
-                                <li>Si ça saute, baissez tous les petits disjoncteurs, réenclenchez le général, et
-                                    remontez-les un par un pour trouver le coupable.</li>
-                                <li>Contactez-moi si la panne persiste ou s'il y a une odeur de brûlé.</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
+
 
                 <!-- Q10 -->
                 <div class="faq__item" data-category="financier">
@@ -288,7 +209,8 @@
                                     solidité ou l'usage (ex: incendie dû à l'installation).</li>
                                 <li><strong>Garantie de Parfait Achèvement (1 an) :</strong> Couvre tous les désordres
                                     signalés.</li>
-                                <li><strong>Garantie Matériel :</strong> 2 ans (garantie constructeur).</li>
+                                <li><strong>Garantie de Bon Fonctionnement (2 ans) :</strong> Je m'engage à réparer ou
+                                    remplacer les éléments défaillants liés à mon intervention.</li>
                             </ul>
                         </div>
                     </div>

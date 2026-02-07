@@ -65,27 +65,13 @@ function initQuoteModal() {
         }
     });
 
-    // Form Submission
+    // Form Submission - le formulaire utilise Web3Forms
+    // On laisse le formulaire se soumettre normalement
     if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // Get values
-            const name = form.querySelector('[name="name"]').value;
-            const email = form.querySelector('[name="email"]').value;
-            const phone = form.querySelector('[name="phone"]').value;
-            const subject = form.querySelector('[name="subject"]').value;
-            const requestObject = form.querySelector('[name="object"]').value; // "objet de la demande"
-
-            // Construct email body
-            const mailSubject = `[Demande Devis] ${subject} - ${name}`;
-            const mailBody = `BONJOUR,\n\nVOICI MA DEMANDE :\n${requestObject}\n\n--------------------------------\nMES COORDONNÉES :\nNom Prénom : ${name}\nEmail : ${email}\nTéléphone : ${phone}\n\nCordialement,`;
-
-            // Open Mail Client
-            window.location.href = `mailto:contact@elecpro.fr?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
-
-            // Optional: Close modal after a delay
-            setTimeout(closeModal, 1000);
+        form.addEventListener('submit', () => {
+            // Le formulaire se soumet à Web3Forms
+            // On ferme juste la modal après un délai
+            setTimeout(closeModal, 500);
         });
     }
 }

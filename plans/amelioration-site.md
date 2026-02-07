@@ -81,7 +81,7 @@
 1. **Section "Notre Expertise Complète"** - Présentation des 2 piliers
 2. **Services Électricité Générale** - Style classique professionnel
 3. **Services Bornes de Recharge** - Style mis en valeur (spécialité)
-4. **Encadré Certification IRVE** - Garde sa position actuelle
+4. **Encadré Qualification IRVE** - Garde sa position actuelle
 
 **Différenciation visuelle :**
 - Électricité générale : cartes avec bordure subtile, icônes bleues

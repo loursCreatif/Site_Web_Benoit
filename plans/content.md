@@ -9,7 +9,7 @@
 "L'énergie qui vous connecte au futur"
 
 ### Description
-Entreprise d'électricité générale spécialisée dans l'installation de bornes de recharge pour véhicules électriques. Intervention rapide, devis gratuit, certification IRVE.
+Entreprise d'électricité générale spécialisée dans l'installation de bornes de recharge pour véhicules électriques. Intervention rapide, devis gratuit, qualification IRVE.
 
 ### Coordonnées (à personnaliser)
 - **Adresse** : [À définir]
@@ -19,7 +19,7 @@ Entreprise d'électricité générale spécialisée dans l'installation de borne
 - **Zone d'intervention** : [À définir - rayon X km]
 
 ### Certifications
-- Certification IRVE (Infrastructures de Recharge pour Véhicules Électriques)
+- Qualification IRVE (Infrastructures de Recharge pour Véhicules Électriques)
 - Qualiélec
 - Habilitation électrique BR/BC
 - RGE Qualibat (si applicable)
@@ -161,7 +161,7 @@ Entreprise d'électricité générale spécialisée dans l'installation de borne
 
 #### Arguments
 
-**Certification IRVE**
+**Qualification IRVE**
 Installateur certifié pour tous types de bornes de recharge
 
 **Intervention Rapide**
@@ -315,7 +315,7 @@ Oui, nous proposons un service de dépannage 7j/7 pour vos urgences électriques
 #### Colonnes
 
 **Logo + Description**
-Électricien professionnel spécialisé dans les bornes de recharge. Certification IRVE.
+Électricien professionnel spécialisé dans les bornes de recharge. Qualification IRVE.
 
 **Services**
 - Bornes de recharge
