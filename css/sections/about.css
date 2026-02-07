@@ -3,6 +3,11 @@
     background-color: var(--bg-secondary);
     position: relative;
     overflow: hidden;
+    padding: var(--space-16) 0;
+}
+
+.about .section-header {
+    margin-top: var(--space-12);
 }
 
 .about__content {

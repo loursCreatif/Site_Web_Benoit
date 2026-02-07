@@ -35,6 +35,10 @@
         padding: var(--space-16) 0;
     }
 
+    .services {
+        padding-top: var(--space-8);
+    }
+
     /* Grid adjustments */
     .grid--3,
     .grid--4 {
@@ -68,6 +72,10 @@
     .faq,
     .contact {
         padding: var(--space-12) 0;
+    }
+
+    .services {
+        padding-top: var(--space-6);
     }
 
     /* Grids become single column */
@@ -355,10 +363,6 @@
     .hero {
         min-height: auto;
         padding: 100px 0 60px;
-    }
-
-    .hero__scroll {
-        display: none;
     }
 }
 

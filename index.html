@@ -48,10 +48,10 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/animations/index.css">
     <link rel="stylesheet" href="css/sections/header.css">
-    <link rel="stylesheet" href="css/sections/hero.css">
+    <link rel="stylesheet" href="css/sections/hero.css?v=20260207-2">
     <link rel="stylesheet" href="css/sections/stats.css">
 
-    <link rel="stylesheet" href="css/sections/services.css">
+    <link rel="stylesheet" href="css/sections/services.css?v=20260207-2">
 
 
     <link rel="stylesheet" href="css/sections/gallery.css">
@@ -62,7 +62,7 @@
     <link rel="stylesheet" href="css/sections/about.css">
     <link rel="stylesheet" href="css/sections/footer.css">
     <link rel="stylesheet" href="css/sections/modal-quote.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/responsive.css?v=20260207-2">
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -119,13 +119,7 @@
                 <h3 class="modal-title">Demande de Devis</h3>
                 <p class="modal-desc">Remplissez ce formulaire pour préparer votre message</p>
             </div>
-            <form id="quote-form" class="quote-form" action="https://api.web3forms.com/submit" method="POST">
-                <!-- Web3Forms Configuration -->
-                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-                <input type="hidden" name="subject" value="Nouvelle demande de devis - BT Électricité">
-                <input type="hidden" name="from_name" value="Site BT Électricité">
-                <input type="hidden" name="redirect" value="https://web3forms.com/success">
-
+            <form id="quote-form" class="quote-form" action="send-email.php" method="POST">
                 <div class="form-group">
                     <label class="form-label" for="quote-name">Nom Prénom</label>
                     <input type="text" id="quote-name" name="name" class="form-input" placeholder="Votre nom complet"

@@ -51,6 +51,7 @@ const galleryData = [
     { category: 'electricite', title: 'Éclairage Façade', location: 'Réalisation récente', image: 'assets/images/portfolio/realisation_uploaded_1.jpg', wide: true },
     { category: 'electricite', title: 'Éclairage Extérieur', location: 'Réalisation récente', image: 'assets/images/portfolio/realisation_uploaded_2.jpg' },
     { category: 'electricite', title: 'Mise en valeur Jardin', location: 'Réalisation récente', image: 'assets/images/portfolio/realisation_uploaded_3.jpg' },
+    { category: 'borne', title: 'Installation Borne de Recharge', location: 'Réalisation récente', image: 'assets/images/portfolio/Borne.jpg' },
     { category: 'residentiel', title: 'Appliques Design', location: 'Réalisation récente', image: 'assets/images/portfolio/realisation_uploaded_4.jpg' },
     { category: 'residentiel', title: 'Mise en valeur Intérieure', location: 'Réalisation récente', image: 'assets/images/portfolio/realisation_uploaded_5.jpg' }
 ];
@@ -308,6 +309,7 @@ async function init() {
     if (typeof initCounters === 'function') initCounters();
     if (typeof initSmoothScroll === 'function') initSmoothScroll();
     if (typeof initBackToTop === 'function') initBackToTop();
+    if (typeof initHeroScrollHint === 'function') initHeroScrollHint();
     if (typeof ThemeManager !== 'undefined') ThemeManager.init();
     if (typeof initGallery === 'function') initGallery();
     if (typeof initAccordion === 'function') initAccordion();

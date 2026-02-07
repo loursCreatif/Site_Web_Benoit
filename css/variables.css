@@ -166,6 +166,7 @@
 
     --container-max: 1280px;
     --container-padding: 1rem;
+    --container-padding-lg: 2rem;
 
     /* ------------------------------------------
      Z-INDEX

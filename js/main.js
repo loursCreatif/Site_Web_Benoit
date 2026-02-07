@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initFormValidation();
     initBackToTop();
     initSmoothScroll();
+    initHeroScrollHint();
 });
 
 /**
@@ -261,4 +262,36 @@ function initBackToTop() {
             behavior: 'smooth'
         });
     });
+}
+
+/**
+ * HERO SCROLL HINT
+ * Affiche l'indicateur au chargement puis le masque dès le premier scroll.
+ */
+function initHeroScrollHint() {
+    const scrollHint = document.querySelector('.hero__scroll');
+    if (!scrollHint) return;
+    if (scrollHint.dataset.hintInit === '1') return;
+    scrollHint.dataset.hintInit = '1';
+
+    let hidden = false;
+
+    const hideHint = () => {
+        if (hidden) return;
+        hidden = true;
+        scrollHint.classList.add('hero__scroll--hidden');
+        window.removeEventListener('scroll', onFirstScroll);
+    };
+
+    const onFirstScroll = () => {
+        if (window.pageYOffset > 30) hideHint();
+    };
+
+    if (window.pageYOffset > 30) {
+        hideHint();
+        return;
+    }
+
+    window.addEventListener('scroll', onFirstScroll, { passive: true });
+    scrollHint.addEventListener('click', hideHint, { once: true });
 }
