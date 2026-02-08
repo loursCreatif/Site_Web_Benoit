@@ -475,6 +475,11 @@
         grid-template-columns: 1fr;
     }
 
+    /* Force les cartes bornes en 1 colonne sur mobile */
+    .services__category--borne .services__grid {
+        grid-template-columns: 1fr;
+    }
+
     .services__category-header {
         flex-direction: column;
         text-align: center;

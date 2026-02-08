@@ -220,4 +220,8 @@
     .header__logo-text {
         display: none;
     }
+
+    .header__logo img {
+        height: 70px;
+    }
 }
