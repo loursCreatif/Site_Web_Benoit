@@ -18,43 +18,6 @@ const sections = [
 ];
 
 // Données dynamiques
-const servicesData = {
-    electric: [
-        { title: 'Installation Électrique', text: 'Installation complète neuve, rénovation électrique et mise aux normes NF C 15-100.', link: '#contact', linkText: 'Demande de devis', icon: 'server', image: 'assets/images/services/installation.png', subject: 'Devis Électricité Générale' },
-        { title: 'Dépannage Urgent', text: 'Intervention rapide pour toutes vos urgences électriques et recherches de pannes.', link: '#contact', linkText: 'Demande de devis', icon: 'alert-circle', image: 'assets/images/services/depannage.png', subject: 'Dépannage' },
-        { title: 'Tableaux Électriques', text: 'installation mise en sécurité et remplacement de tableau électrique', link: '#contact', linkText: 'Demande de devis', icon: 'grid', image: 'assets/images/services/tableau.png', subject: 'Rénovation' },
-        { title: 'Éclairage & Domotique', text: "Installation d'éclairage LED, Maison connectée et automatisation.", link: '#contact', linkText: 'Demande de devis', icon: 'sun', image: 'assets/images/services/eclairage.png', subject: 'Devis Électricité Générale' }
-    ],
-    borne: [
-        { title: 'Installation Résidentielle', text: 'Borne wallbox murale ou sur pied, installation intérieure/extérieure, optimisée pour votre habitation.', link: '#contact', linkText: 'Demande de devis', icon: 'home', image: 'assets/images/services/borne_residentielle.png', subject: 'Devis Borne de Recharge' },
-        { title: 'Prise Renforcée', text: 'Alternative économique à la borne, idéale pour les hybrides rechargeables ou petits rouleurs. Sécurité optimale.', link: '#contact', linkText: 'Demande de devis', icon: 'zap', image: 'assets/images/services/prise_renforcee.png', subject: 'Devis Prise Renforcée' },
-        { title: 'Bornes Intelligentes', text: 'Gestion dynamique de puissance, programmation heures creuses, application mobile de contrôle.', link: '#contact', linkText: 'Demande de devis', icon: 'cpu', image: 'assets/images/services/borne_intelligente.png', subject: 'Devis Borne de Recharge' }
-    ]
-};
-
-const irveFeatures = [
-    'Qualification officielle IRVE',
-    'Conformité normes NFC 15-100',
-    'Garantie décennale incluse',
-    "Éligibilité crédit d'impôt (500€)"
-];
-
-const legrandFeatures = [
-    'Partenaire certifié Legrand',
-    'Installation aux normes NF C 15-100',
-    'Matériel haute performance',
-    'Garantie constructeur préservée'
-];
-
-const galleryData = [
-    { category: 'electricite', title: 'Éclairage Cuisine LED', location: 'Valognes', image: 'assets/images/portfolio/portfolio_led_lighting_kitchen_1769950857292.png' },
-    { category: 'electricite', title: 'Éclairage Façade', location: 'Réalisation récente', image: 'assets/images/portfolio/realisation_uploaded_1.jpg', wide: true },
-    { category: 'electricite', title: 'Éclairage Extérieur', location: 'Réalisation récente', image: 'assets/images/portfolio/realisation_uploaded_2.jpg' },
-    { category: 'electricite', title: 'Mise en valeur Jardin', location: 'Réalisation récente', image: 'assets/images/portfolio/realisation_uploaded_3.jpg' },
-    { category: 'borne', title: 'Installation Borne de Recharge', location: 'Réalisation récente', image: 'assets/images/portfolio/Borne.jpg' },
-    { category: 'residentiel', title: 'Appliques Design', location: 'Réalisation récente', image: 'assets/images/portfolio/realisation_uploaded_4.jpg' },
-    { category: 'residentiel', title: 'Mise en valeur Intérieure', location: 'Réalisation récente', image: 'assets/images/portfolio/realisation_uploaded_5.jpg' }
-];
 
 const testimonialsData = [
     { text: "J'ai fait installer une borne Wallbox chez moi le mois dernier. Benoit a pris le temps de tout m'expliquer, notamment pour profiter des heures creuses. Installation propre et rapide, je recommande !", name: 'Marie L.', location: 'La Hague - Borne résidentielle', initials: 'ML', type: 'borne', rating: 5 },
@@ -121,74 +84,26 @@ async function loadSection(section) {
     }
 }
 
+function isContainerEmpty(container) {
+    if (!container) return false;
+    return container.textContent.trim().length === 0 && container.children.length === 0;
+}
+
+function setContentIfEmpty(container, html) {
+    if (!isContainerEmpty(container)) return;
+    container.innerHTML = html;
+}
+
 // Générer le contenu dynamique
 function populateDynamicContent() {
     // Étoiles hero
     const heroStars = document.getElementById('hero-stars');
-    if (heroStars) heroStars.innerHTML = createStars(5);
-
-    // Services électriques
-    const servicesElectric = document.getElementById('services-electric');
-    if (servicesElectric) {
-        servicesElectric.innerHTML = servicesData.electric.map((s, i) => `
-            <a href="${s.link}" class="service-card service-card--electric reveal${i > 0 ? ` reveal--delay-${i}` : ''} ${s.link.startsWith('tel:') ? '' : 'js-open-quote-modal'}" ${s.subject ? `data-subject="${s.subject}"` : ''}>
-                ${s.image ? `<div class="service-card__image"><img src="${s.image}" alt="${s.title}" loading="lazy"></div>` : ''}
-                <h4 class="service-card__title">${s.title}</h4>
-                <p class="service-card__text">${s.text}</p>
-                <span class="service-card__link">${s.linkText} ${getIcon('arrow-right')}</span>
-            </a>
-        `).join('');
-    }
-
-    // Services bornes
-    const servicesBorne = document.getElementById('services-borne');
-    if (servicesBorne) {
-        servicesBorne.innerHTML = servicesData.borne.map((s, i) => `
-            <a href="${s.link}" class="service-card service-card--borne reveal${i > 0 ? ` reveal--delay-${i}` : ''} ${s.link.startsWith('tel:') ? '' : 'js-open-quote-modal'}" ${s.subject ? `data-subject="${s.subject}"` : ''}>
-                ${s.image ? `<div class="service-card__image"><img src="${s.image}" alt="${s.title}" loading="lazy"></div>` : `<div class="service-card__icon">${getIcon(s.icon)}</div>`}
-                <h4 class="service-card__title">${s.title}</h4>
-                <p class="service-card__text">${s.text}</p>
-                <span class="service-card__link">${s.linkText} ${getIcon('arrow-right')}</span>
-            </a>
-        `).join('');
-    }
-
-    // Liste IRVE
-    const irveList = document.getElementById('irve-list');
-    if (irveList) {
-        irveList.innerHTML = irveFeatures.map(f => `
-            <li class="services__specialty-item">${getIcon('check')} ${f}</li>
-        `).join('');
-    }
-
-    // Liste Legrand
-    const legrandList = document.getElementById('legrand-list');
-    if (legrandList) {
-        legrandList.innerHTML = legrandFeatures.map(f => `
-            <li class="services__specialty-item services__specialty-item--electric">${getIcon('check')} ${f}</li>
-        `).join('');
-    }
-
-    // Galerie
-    const galleryGrid = document.getElementById('gallery-grid');
-    if (galleryGrid) {
-        galleryGrid.innerHTML = galleryData.map(item => `
-            <article class="gallery__item${item.wide ? ' gallery__item--wide' : ''} reveal" data-category="${item.category}">
-                <img src="${item.image}" alt="${item.title}" class="gallery__image">
-                <div class="gallery__overlay">
-                    <span class="gallery__category">${item.category.charAt(0).toUpperCase() + item.category.slice(1)}</span>
-                    <h3 class="gallery__item-title">${item.title}</h3>
-                    <p class="gallery__item-location">${getIcon('map-pin')} ${item.location}</p>
-                </div>
-                <div class="gallery__zoom">${getIcon('zoom-in')}</div>
-            </article>
-        `).join('');
-    }
+    if (heroStars) setContentIfEmpty(heroStars, createStars(5));
 
     // Témoignages
     const testimonialsSlides = document.getElementById('testimonials-slides');
     if (testimonialsSlides) {
-        testimonialsSlides.innerHTML = testimonialsData.map(t => `
+        setContentIfEmpty(testimonialsSlides, testimonialsData.map(t => `
             <div class="testimonials__slide">
                 <div class="testimonial-card">
                     <div class="testimonial-card__stars">${createStars(t.rating || 5)}</div>
@@ -202,21 +117,21 @@ function populateDynamicContent() {
                     </div>
                 </div>
             </div>
-        `).join('');
+        `).join(''));
     }
 
     // Dots témoignages
     const testimonialsDots = document.getElementById('testimonials-dots');
     if (testimonialsDots) {
-        testimonialsDots.innerHTML = testimonialsData.map((_, i) => `
+        setContentIfEmpty(testimonialsDots, testimonialsData.map((_, i) => `
             <button class="testimonials__dot${i === 0 ? ' testimonials__dot--active' : ''}" aria-label="Slide ${i + 1}"></button>
-        `).join('');
+        `).join(''));
     }
 
     // Trust badges
     const trustBadgesEl = document.getElementById('trust-badges');
     if (trustBadgesEl) {
-        trustBadgesEl.innerHTML = trustBadges.map(b => `
+        setContentIfEmpty(trustBadgesEl, trustBadges.map(b => `
             <div class="trust-badge">
                 <div class="trust-badge__icon">${getIcon(b.icon)}</div>
                 <div class="trust-badge__content">
@@ -224,21 +139,21 @@ function populateDynamicContent() {
                     <div class="trust-badge__label">${b.label}</div>
                 </div>
             </div>
-        `).join('');
+        `).join(''));
     }
 
     // Villes
     const citiesGrid = document.getElementById('cities-grid');
     if (citiesGrid) {
-        citiesGrid.innerHTML = cities.map(c => `
+        setContentIfEmpty(citiesGrid, cities.map(c => `
             <div class="coverage__city" data-city="${c}">${getIcon('map-pin')} ${c}</div>
-        `).join('');
+        `).join(''));
     }
 
     // Info couverture
     const coverageInfoEl = document.getElementById('coverage-info');
     if (coverageInfoEl) {
-        coverageInfoEl.innerHTML = coverageInfo.map(info => `
+        setContentIfEmpty(coverageInfoEl, coverageInfo.map(info => `
             <div class="coverage__info-item">
                 <div class="coverage__info-icon">${getIcon(info.icon)}</div>
                 <div class="coverage__info-content">
@@ -246,7 +161,7 @@ function populateDynamicContent() {
                     <div class="coverage__info-value">${info.value}</div>
                 </div>
             </div>
-        `).join('');
+        `).join(''));
     }
 }
 
