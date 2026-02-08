@@ -98,20 +98,6 @@
     margin-top: var(--space-1);
 }
 
-.services__qualifelec-logo {
-    display: block;
-    height: 48px;
-    width: auto;
-    margin-top: var(--space-4);
-}
-
-@media (max-width: 768px) {
-    .services__qualifelec-logo {
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
 .services__certification-badge {
     display: inline-flex;
     align-items: center;

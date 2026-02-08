@@ -89,10 +89,11 @@
     .hero__ctas {
         flex-direction: column;
         width: 100%;
+        align-items: center;
     }
 
     .hero__ctas .btn {
-        width: 100%;
+        width: min(100%, 22rem);
     }
 
     /* Cards full width */

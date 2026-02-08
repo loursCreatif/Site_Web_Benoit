@@ -6,9 +6,20 @@
 function initGallery() {
     const gallery = document.querySelector('.gallery__grid');
     if (!gallery) return;
+    if (gallery.dataset.initialized === 'true') return;
 
     const items = gallery.querySelectorAll('.gallery__item');
     const filters = document.querySelectorAll('.gallery__filter');
+    const hideTimers = new WeakMap();
+    let filterToken = 0;
+
+    function clearHideTimer(item) {
+        const timerId = hideTimers.get(item);
+        if (timerId) {
+            clearTimeout(timerId);
+            hideTimers.delete(item);
+        }
+    }
 
     // Filtres
     filters.forEach(filter => {
@@ -18,23 +29,31 @@ function initGallery() {
             filter.classList.add('gallery__filter--active');
 
             const category = filter.dataset.filter;
+            const currentToken = ++filterToken;
 
             // Filtrer les éléments
             items.forEach(item => {
                 if (category === 'all' || item.dataset.category === category) {
+                    clearHideTimer(item);
                     item.classList.remove('gallery__item--hidden');
                     item.style.display = '';
                 } else {
+                    clearHideTimer(item);
                     item.classList.add('gallery__item--hidden');
-                    setTimeout(() => {
+                    const timerId = setTimeout(() => {
+                        // Ignore les timers obsolètes créés par un filtre précédent
+                        if (currentToken !== filterToken) return;
                         if (item.classList.contains('gallery__item--hidden')) {
                             item.style.display = 'none';
                         }
                     }, 300);
+                    hideTimers.set(item, timerId);
                 }
             });
         });
     });
+
+    gallery.dataset.initialized = 'true';
 
     // Lightbox
     initLightbox();
@@ -80,12 +99,13 @@ function initLightbox() {
 
     function updateVisibleItems() {
         visibleItems = Array.from(items).filter(item =>
-            !item.classList.contains('gallery__item--hidden')
+            !item.classList.contains('gallery__item--hidden') && item.style.display !== 'none'
         );
     }
 
     function openLightbox(index) {
         updateVisibleItems();
+        if (!visibleItems.length || index < 0) return;
         currentIndex = index;
         updateLightboxContent();
         lightbox.classList.add('lightbox--open');
@@ -122,8 +142,9 @@ function initLightbox() {
     }
 
     // Événements
-    items.forEach((item, index) => {
+    items.forEach((item) => {
         item.addEventListener('click', () => {
+            if (item.classList.contains('gallery__item--hidden') || item.style.display === 'none') return;
             updateVisibleItems();
             const visibleIndex = visibleItems.indexOf(item);
             openLightbox(visibleIndex);

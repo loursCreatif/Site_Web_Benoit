@@ -17,7 +17,7 @@ function initCarousel() {
 
     let currentSlide = 0;
     let autoplayInterval;
-    const autoplayDelay = 5000;
+    const autoplayDelay = 6000;
 
     function goToSlide(index) {
         if (index < 0) index = slides.length - 1;

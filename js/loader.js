@@ -20,16 +20,10 @@ const sections = [
 // Données dynamiques
 
 const testimonialsData = [
+    { text: "Benoit est une personne très chaleureuse avec qui j'ai aimé travailler, il est soigné dans son travail.", name: 'Martin M.', location: 'Client', initials: 'MM', type: 'electricite', rating: 5 },
     { text: "J'ai fait installer une borne Wallbox chez moi le mois dernier. Benoit a pris le temps de tout m'expliquer, notamment pour profiter des heures creuses. Installation propre et rapide, je recommande !", name: 'Marie L.', location: 'La Hague - Borne résidentielle', initials: 'ML', type: 'borne', rating: 5 },
-    { text: "Prestation nickel pour l'installation de 4 bornes dans notre copropriété. Benoit a géré toutes les démarches administratives et techniques. Travaux réalisés dans les temps, rien à redire.", name: 'Pierre D.', location: 'Copropriété Les Pieux', initials: 'PD', type: 'borne', rating: 5 },
     { text: "Mon disjoncteur sautait sans arrêt, impossible de trouver pourquoi. Benoit a identifié le problème en 20 minutes, un ancien câble abîmé dans le garage. Réparé en une heure. Merci !", name: 'Sophie M.', location: 'Cherbourg - Dépannage', initials: 'SM', type: 'depannage', rating: 5 },
-    { text: "Dépannage d'urgence un dimanche après-midi, il a répondu tout de suite et est intervenu dans l'heure. Problème résolu rapidement, très pro et arrangeant. On a son numéro maintenant !", name: 'Jean-Claude B.', location: 'Beaumont - Urgence', initials: 'JB', type: 'depannage', rating: 5 },
-    { text: "Nous avons rénové entièrement l'électricité de notre maison des années 70 avec Benoit. Travail très soigné, tout est aux normes et bien expliqué. Nous sommes ravis du résultat.", name: 'Isabelle R.', location: 'Valognes - Rénovation', initials: 'IR', type: 'renovation', rating: 5 },
-    { text: "Remplacement de mon vieux tableau électrique et installation d'éclairages LED dans toute la maison. Benoit respecte ses devis et ses délais, je suis très satisfait. Travail sérieux.", name: 'Marc T.', location: 'Bricquebec - Mise aux normes', initials: 'MT', type: 'electricite', rating: 5 },
-    { text: "Installation d'une borne de recharge pour mon nouveau véhicule électrique. Benoit m'a bien conseillé sur le modèle adapté à mes besoins. Installation impeccable, je recharge tranquille maintenant.", name: "Bernard K.", location: "Flamanville - Borne IRVE", initials: "BK", type: "borne", rating: 5 },
-    { text: "Je devais vendre ma maison mais l'électricité n'était pas aux normes. Benoit est intervenu rapidement pour la mise en conformité. Diagnostic clair, travaux nickel, vente conclue sans problème.", name: "Catherine D.", location: "Les Pieux - Mise en conformité", initials: "CD", type: "electricite", rating: 5 },
-    { text: "Électricien très sérieux pour la mise aux normes de mon local commercial. Ponctuel, travail propre et de bons conseils pour optimiser mon installation. Je le recommande sans hésiter.", name: "Jean-Pierre L.", location: "La Hague - Professionnel", initials: "JL", type: 'electricite', rating: 5 },
-    { text: "Super contact avec Benoit. Il m'a fait un devis clair et détaillé pour ma Wallbox. Prix honnête, installation rapide et soignée. En plus il a pris le temps de m'expliquer le fonctionnement.", name: "Antoine S.", location: "Cherbourg - Borne", initials: "AS", type: "borne", rating: 5 }
+    { text: "Nous avons rénové entièrement l'électricité de notre maison des années 70 avec Benoit. Travail très soigné, tout est aux normes et bien expliqué. Nous sommes ravis du résultat.", name: 'Isabelle R.', location: 'Valognes - Rénovation', initials: 'IR', type: 'renovation', rating: 5 }
 ];
 
 const cities = ['La Hague', 'Cherbourg', 'Les Pieux', 'Bricquebec', 'Flamanville'];
