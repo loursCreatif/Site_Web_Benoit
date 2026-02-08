@@ -145,24 +145,49 @@ function initFormValidation() {
             return;
         }
 
+        // URL FormSubmit pour envoi réel
+        const FORMSUBMIT_URL = 'https://formsubmit.co/ajax/contact@btelectricite.fr';
+
         // Afficher le loader
         submitBtn.classList.add('contact__submit--loading');
         submitBtn.disabled = true;
 
-        // Simuler l'envoi (remplacer par un vrai appel API)
         try {
-            await simulateFormSubmission();
+            const formData = new FormData(form);
 
-            // Afficher le message de succès
-            showFormMessage('success', 'Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.');
-            form.reset();
+            // Ajouter l'email de confirmation automatique à l'expéditeur
+            const userEmail = form.querySelector('input[name="email"]')?.value;
+            if (userEmail) {
+                formData.append('_autoresponse', 'Merci pour votre message ! Nous avons bien reçu votre demande et vous répondrons dans les plus brefs délais. - BT Électricité');
+            }
 
-            // Réinitialiser les états de validation
-            inputs.forEach(input => {
-                input.classList.remove('contact__input--error', 'contact__input--success');
+            // Désactiver le captcha et la page de redirection
+            formData.append('_captcha', 'false');
+            formData.append('_template', 'table');
+
+            const response = await fetch(FORMSUBMIT_URL, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
             });
 
+            if (response.ok) {
+                // Afficher le message de succès
+                showFormMessage('success', 'Votre message a été envoyé avec succès ! Un email de confirmation vous a été envoyé.');
+                form.reset();
+
+                // Réinitialiser les états de validation
+                inputs.forEach(input => {
+                    input.classList.remove('contact__input--error', 'contact__input--success');
+                });
+            } else {
+                throw new Error('Erreur lors de l\'envoi');
+            }
+
         } catch (error) {
+            console.error('Erreur formulaire:', error);
             showFormMessage('error', 'Une erreur est survenue. Veuillez réessayer ou me contacter directement par téléphone.');
         } finally {
             submitBtn.classList.remove('contact__submit--loading');
@@ -197,13 +222,6 @@ function initFormValidation() {
         setTimeout(() => {
             messageEl.remove();
         }, 5000);
-    }
-
-    // Simulation d'envoi
-    function simulateFormSubmission() {
-        return new Promise((resolve) => {
-            setTimeout(resolve, 1500);
-        });
     }
 }
 
