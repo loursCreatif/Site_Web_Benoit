@@ -8,9 +8,12 @@ function initQuoteModal() {
     const closeBtn = document.querySelector('.modal-close');
     const form = document.getElementById('quote-form');
 
-    // URL FormSubmit - Service gratuit, pas d'inscription nécessaire
-    // Au premier envoi, un email de confirmation sera envoyé à cette adresse
+    // URL FormSubmit
     const FORMSUBMIT_URL = 'https://formsubmit.co/ajax/contact@btelectricite.fr';
+
+    // Anti-spam : timestamp du dernier envoi
+    let lastSubmitTime = 0;
+    const MIN_SUBMIT_INTERVAL = 5000; // 5 secondes minimum entre envois
 
     // Function to open modal
     function openModal(e, button) {
@@ -47,6 +50,10 @@ function initQuoteModal() {
         const errorMsg = modal?.querySelector('.form-error');
         if (successMsg) successMsg.remove();
         if (errorMsg) errorMsg.remove();
+
+        const modalHeader = modal?.querySelector('.modal-header');
+        if (modalHeader) modalHeader.style.display = 'block';
+
         if (form) {
             form.style.display = 'block';
             const submitBtn = form.querySelector('.form-submit');
@@ -62,23 +69,51 @@ function initQuoteModal() {
         if (!form) return;
         form.style.display = 'none';
 
+        // Masquer l'en-tête pour un rendu plus propre
+        const modalHeader = modal?.querySelector('.modal-header');
+        if (modalHeader) modalHeader.style.display = 'none';
+
         const successDiv = document.createElement('div');
         successDiv.className = 'form-success';
         successDiv.innerHTML = `
-            <div class="success-icon">
-                <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10" class="success-circle"></circle>
-                    <path d="M9 12l2 2 4-4" class="success-check"></path>
-                </svg>
+            <div class="success-confetti" aria-hidden="true"></div>
+            <div class="success-content">
+                <div class="success-icon-wrapper">
+                    <svg class="success-icon" viewBox="0 0 52 52">
+                        <circle class="success-circle" cx="26" cy="26" r="25" fill="none"/>
+                        <path class="success-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                </div>
+                <h3 class="success-title">Demande envoyée !</h3>
+                <p class="success-text">Merci pour votre confiance.<br>Votre demande a bien été transmise.</p>
+                <button type="button" class="btn btn--primary success-close-btn" onclick="document.getElementById('quote-modal').classList.remove('active'); document.body.style.overflow = '';">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Compris, merci !
+                </button>
             </div>
-            <h3 class="success-title">Message envoyé !</h3>
-            <p class="success-text">Merci pour votre demande. Je vous répondrai dans les plus brefs délais.</p>
-            <button type="button" class="btn btn--primary" onclick="document.getElementById('quote-modal').classList.remove('active'); document.body.style.overflow = '';">
-                Fermer
-            </button>
         `;
 
         form.parentNode.insertBefore(successDiv, form.nextSibling);
+
+        // Lancer les confettis
+        createConfetti(successDiv.querySelector('.success-confetti'));
+    }
+
+    // Créer des confettis animés
+    function createConfetti(container) {
+        if (!container) return;
+        const colors = ['#22c55e', '#00D4FF', '#FFD700', '#FF6B6B', '#A78BFA'];
+        for (let i = 0; i < 30; i++) {
+            const confetti = document.createElement('span');
+            confetti.className = 'confetti-piece';
+            confetti.style.setProperty('--x', `${Math.random() * 200 - 100}px`);
+            confetti.style.setProperty('--y', `${Math.random() * -250 - 50}px`);
+            confetti.style.setProperty('--r', `${Math.random() * 720 - 360}deg`);
+            confetti.style.setProperty('--delay', `${Math.random() * 0.3}s`);
+            confetti.style.setProperty('--size', `${4 + Math.random() * 6}px`);
+            confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+            container.appendChild(confetti);
+        }
     }
 
     // Show error message
@@ -136,6 +171,23 @@ function initQuoteModal() {
     if (form) {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
+
+            // Anti-bot : vérifier le honeypot
+            const honeyField = form.querySelector('input[name="website"]');
+            if (honeyField && honeyField.value) {
+                // C'est un bot, simuler un succès sans envoyer
+                form.reset();
+                showSuccess();
+                return;
+            }
+
+            // Anti-spam : rate limiting
+            const now = Date.now();
+            if (now - lastSubmitTime < MIN_SUBMIT_INTERVAL) {
+                showError('Veuillez patienter quelques secondes avant de renvoyer.');
+                return;
+            }
+            lastSubmitTime = now;
 
             const submitBtn = form.querySelector('.form-submit');
             if (submitBtn) {

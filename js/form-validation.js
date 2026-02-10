@@ -7,6 +7,10 @@ function initFormValidation() {
     const form = document.querySelector('.contact__form');
     if (!form) return;
 
+    // Anti-spam : rate limiting
+    let lastSubmitTime = 0;
+    const MIN_SUBMIT_INTERVAL = 5000; // 5s minimum
+
     const inputs = form.querySelectorAll('.contact__input');
     const submitBtn = form.querySelector('.contact__submit');
 
@@ -111,9 +115,33 @@ function initFormValidation() {
         });
     });
 
+    // Injecter le honeypot anti-bot dans le formulaire
+    const honeypotDiv = document.createElement('div');
+    honeypotDiv.style.cssText = 'position:absolute;left:-9999px;top:-9999px;';
+    honeypotDiv.setAttribute('aria-hidden', 'true');
+    honeypotDiv.innerHTML = '<input type="text" name="_honey" tabindex="-1" autocomplete="off"><input type="text" name="website" tabindex="-1" autocomplete="off">';
+    form.insertBefore(honeypotDiv, form.firstChild);
+
     // Soumission du formulaire
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
+
+        // Anti-bot : vérifier le honeypot
+        const honeyField = form.querySelector('input[name="website"]');
+        if (honeyField && honeyField.value) {
+            // Bot détecté → simuler un succès
+            form.reset();
+            showFormMessage('success', 'Votre message a été envoyé avec succès !');
+            return;
+        }
+
+        // Anti-spam : rate limiting
+        const now = Date.now();
+        if (now - lastSubmitTime < MIN_SUBMIT_INTERVAL) {
+            showFormMessage('error', 'Veuillez patienter quelques secondes.');
+            return;
+        }
+        lastSubmitTime = now;
 
         let isValid = true;
 
@@ -155,13 +183,7 @@ function initFormValidation() {
         try {
             const formData = new FormData(form);
 
-            // Ajouter l'email de confirmation automatique à l'expéditeur
-            const userEmail = form.querySelector('input[name="email"]')?.value;
-            if (userEmail) {
-                formData.append('_autoresponse', 'Merci pour votre message ! Nous avons bien reçu votre demande et vous répondrons dans les plus brefs délais. - BT Électricité');
-            }
-
-            // Désactiver le captcha et la page de redirection
+            // Configuration FormSubmit
             formData.append('_captcha', 'false');
             formData.append('_template', 'table');
 
@@ -174,8 +196,7 @@ function initFormValidation() {
             });
 
             if (response.ok) {
-                // Afficher le message de succès
-                showFormMessage('success', 'Votre message a été envoyé avec succès ! Un email de confirmation vous a été envoyé.');
+                showFormMessage('success', 'Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.');
                 form.reset();
 
                 // Réinitialiser les états de validation
