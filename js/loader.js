@@ -21,9 +21,9 @@ const sections = [
 
 const testimonialsData = [
     { text: "Benoit est une personne très chaleureuse avec qui j'ai aimé travailler, il est soigné dans son travail.", name: 'Martin M.', location: 'Client', initials: 'MM', type: 'electricite', rating: 5 },
-    { text: "J'ai fait installer une borne Wallbox chez moi le mois dernier. Benoit a pris le temps de tout m'expliquer, notamment pour profiter des heures creuses. Installation propre et rapide, je recommande !", name: 'Marie L.', location: 'La Hague - Borne résidentielle', initials: 'ML', type: 'borne', rating: 5 },
-    { text: "Mon disjoncteur sautait sans arrêt, impossible de trouver pourquoi. Benoit a identifié le problème en 20 minutes, un ancien câble abîmé dans le garage. Réparé en une heure. Merci !", name: 'Sophie M.', location: 'Cherbourg - Dépannage', initials: 'SM', type: 'depannage', rating: 5 },
-    { text: "Nous avons rénové entièrement l'électricité de notre maison des années 70 avec Benoit. Travail très soigné, tout est aux normes et bien expliqué. Nous sommes ravis du résultat.", name: 'Isabelle R.', location: 'Valognes - Rénovation', initials: 'IR', type: 'renovation', rating: 5 }
+    { text: "J'ai fait appel à M. Taquet sur recommandation pour divers travaux d'électricité dans ma maison. Il a été hyper disponible et a su trouver d'où venaient les problèmes alors que cela était visiblement technique. Il m'a proposé les solutions les plus adaptées tout en me laissant le maximum de choix possibles. Je recommande vraiment !", name: 'Hélène Delannoy', location: 'Avis Google - Dépannage électricité', initials: 'HD', type: 'depannage', rating: 5 },
+    { text: "Merci Benoît pour tes supers conseils et ton accompagnement pour l'installation d'une borne de recharge de voiture électrique ! Un travail au top et réalisé avec soin.", name: 'Han Franck TRAN', location: 'Avis Google - Borne de recharge IRVE', initials: 'HT', type: 'borne', rating: 5 },
+    { text: "Monsieur Taquet est un excellent professionnel que nous recommandons les yeux fermés. Et si vous voulez voir la qualité de son travail, vous pouvez venir au Restaurant le Renard pour lequel il a réalisé de très belles prestations.", name: 'Alexandre Safar', location: 'Avis Google - Restaurant le Renard', initials: 'AS', type: 'electricite', rating: 5 }
 ];
 
 const cities = ['La Hague', 'Cherbourg', 'Les Pieux', 'Bricquebec', 'Flamanville'];
